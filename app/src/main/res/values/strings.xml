@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">RutePantry</string>
+    <!-- General String -->
+    <string name="plus">+</string>
+    <!-- Pantries String -->
+    <string name="title_pantry">Pantries</string>
+    <string name="tanggal1_pantry">10/22/2020</string>
+    <string name="qty1_pantry">Qty: 5</string>
+    <string name="tanggal2_pantry">10/21/2020</string>
+    <string name="qty2_pantry">Qty: 0</string>
+    <string name="kadaluarsa">Some foods may be nearly expired.</string>
+    <!-- Groceries String -->
+    <string name="title_groceries">Groceries</string>
+    <!-- Empty Groceries String -->
+    <string name="empty_groceries_content">Your groceries is empty. Tap the + button to add an item.</string>
+    <!-- Filled Groceries String -->
+    <string name="item2_name">Potato</string>
+    <string name="item2_expire">Will be expired in 2 days</string>
+    <string name="item2_qty">Qty: 2 Kg</string>
+    <string name="item1_name">Cow Meat</string>
+    <string name="item1_expire">Will be expired in 1 days</string>
+    <string name="item1_qty">Qty: 1 Kg</string>
+    <!-- Input Groceries -->
+    <string name="title_input_groceries">Add a new date</string>
+    <string name="content_input_groceries">Enter a new date in the form below</string>
+    <string name="button_input_groceries">Save</string>
+    <!-- Input Item -->
+    <string name="title_input_item">Add a new item</string>
+    <string name="subtitle_input_item">10/22/2020</string>
+    <string name="item_input_item">Select Item</string>
+    <string name="quantity_input_item">Item Quantity</string>
+    <string name="button_input_item">Add</string>
+
+</resources>

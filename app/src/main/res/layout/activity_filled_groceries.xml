@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilledGroceries">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/filledGroceriesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="@string/title_groceries"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/filledGroceriesPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="end"
+                android:text="@string/plus"
+                android:textSize="34sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="20sp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:layout_marginBottom="20sp"
+                android:background="@color/buttonPantry"
+                android:padding="10sp">
+
+                <TextView
+                    android:id="@+id/itemName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12sp"
+                    android:layout_toRightOf="@id/itemPict2"
+                    android:text="@string/item2_name"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/itemExpire2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="12sp"
+                    android:layout_toRightOf="@id/itemPict2"
+                    android:text="@string/item2_expire"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/itemQty2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/itemName2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/item2_qty"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/itemPict2"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true"
+                    android:background="@color/white"
+                    app:srcCompat="@drawable/kentang" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:background="@color/buttonPantry"
+                android:padding="10sp">
+
+                <TextView
+                    android:id="@+id/itemName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12sp"
+                    android:layout_toRightOf="@id/itemPict1"
+                    android:text="@string/item1_name"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/itemExpire1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="12sp"
+                    android:layout_toRightOf="@id/itemPict1"
+                    android:text="@string/item1_expire"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/itemQty1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/itemName1"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/item1_qty"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/itemPict1"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true"
+                    android:background="@color/white"
+                    app:srcCompat="@drawable/daging_sapi" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
