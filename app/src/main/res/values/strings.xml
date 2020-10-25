@@ -17,7 +17,7 @@
     <string name="item2_name">Potato</string>
     <string name="item2_expire">Will be expired in 2 days</string>
     <string name="item2_qty">Qty: 1 Kg</string>
-    <string name="item1_name">Cow Meat</string>
+    <string name="item1_name">Beef</string>
     <string name="item1_expire">Will be expired in 1 days</string>
     <string name="item1_qty">Qty: 5 Kg</string>
     <!-- Input Groceries -->
