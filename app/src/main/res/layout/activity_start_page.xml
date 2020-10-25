@@ -16,7 +16,8 @@
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/textnama2"/>
 
     <TextView
         android:id="@+id/textnama2"
@@ -27,8 +28,7 @@
         android:textSize="7pt"
         tools:ignore="MissingConstraints"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textnama1" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView6"
