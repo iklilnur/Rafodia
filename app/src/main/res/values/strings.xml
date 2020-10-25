@@ -19,7 +19,7 @@
     <string name="item2_qty">Qty: 1 Kg</string>
     <string name="item1_name">Cow Meat</string>
     <string name="item1_expire">Will be expired in 1 days</string>
-    <string name="item1_qty">Qty: 0.5 Kg</string>
+    <string name="item1_qty">Qty: 5 Kg</string>
     <!-- Input Groceries -->
     <string name="title_input_groceries">Add a new date</string>
     <string name="content_input_groceries">Enter a new date in the form below</string>
