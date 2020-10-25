@@ -14,7 +14,7 @@
     <!-- Empty Groceries String -->
     <string name="empty_groceries_content">Your groceries is empty. Tap the + button to add an item.</string>
     <!-- Filled Groceries String -->
-    <string name="item2_name">Potato</string>
+    <string name="item2_name">Kentang</string>
     <string name="item2_expire">Will be expired in 2 days</string>
     <string name="item2_qty">Qty: 2 Kg</string>
     <string name="item1_name">Beef</string>
