@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/button"
     tools:context=".MainActivity">
 
 
@@ -11,34 +12,34 @@
         android:id="@+id/textnama1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RAFODIA"
+        android:layout_above="@+id/textnama2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/title_start_page"
         android:textSize="10pt"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textnama2"/>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textnama2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Raw Food Pedia"
-        android:textStyle="bold"
-        android:textSize="7pt"
-        tools:ignore="MissingConstraints"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Raw Food Pedia"
+        android:textSize="7pt"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textnama2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="M a n a g e s   Y o u r   G r o c e r i e s"
         android:textStyle="italic"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textnama2"
         tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
