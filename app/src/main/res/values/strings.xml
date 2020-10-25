@@ -30,5 +30,7 @@
     <string name="item_input_item">Select Item</string>
     <string name="quantity_input_item">Item Quantity</string>
     <string name="button_input_item">Add</string>
+    <!-- Start Page -->
+    <string name="title_start_page">RAFODIA</string>
 
 </resources>
