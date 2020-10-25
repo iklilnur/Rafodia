@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textnama1"
+        android:id="@+id/text_rafodia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textnama2"
