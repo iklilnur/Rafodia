@@ -2,10 +2,11 @@
     <string name="app_name">RutePantry</string>
     <!-- General String -->
     <string name="plus">+</string>
+    <string name="icon">RAFODIA</string>
     <!-- Pantries String -->
-    <string name="title_pantry">Pantries</string>
+    <string name="title_pantry">Pantry</string>
     <string name="tanggal1_pantry">10/22/2020</string>
-    <string name="qty1_pantry">Qty: 5</string>
+    <string name="qty1_pantry">Qty: 2</string>
     <string name="tanggal2_pantry">10/21/2020</string>
     <string name="qty2_pantry">Qty: 0</string>
     <string name="kadaluarsa">Some foods may be nearly expired.</string>
