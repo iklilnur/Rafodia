@@ -9,52 +9,146 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/background"
         android:orientation="vertical"
-        android:padding="20sp">
+        android:padding="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/groceriesHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/emptyGroceriesTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:text="@string/title_groceries"
-                android:textSize="24sp" />
+            android:background="@color/header"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
 
             <Button
-                android:id="@+id/emptyGroceriesPlus"
+                android:id="@+id/backButton"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/button_back" />
+
+            <TextView
+                android:id="@+id/iconAplikasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:gravity="end"
-                android:text="@string/plus"
-                android:textSize="34sp" />
-        </LinearLayout>
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/icon"
+                android:textColor="@color/background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pantryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconAplikasi"
+                android:layout_alignParentRight="true"
+                android:text="@string/title_pantry"
+                android:textColor="@color/background" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:background="@color/background"
             android:orientation="vertical"
             android:padding="20sp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/addItem"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="right|end"
+                    android:layout_marginLeft="0sp"
+                    android:layout_marginRight="0sp"
+                    android:background="@color/background"
+                    android:text="@string/plus"
+                    android:textColor="@color/footer"
+                    android:textSize="38sp" />
+
+                <TextView
+                    android:id="@+id/filledGroceriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="0sp"
+                    android:background="@color/background"
+                    android:gravity="center_vertical"
+                    android:text="@string/title_groceries"
+                    android:textColor="@color/footer"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/filledGroceriesTitle"
+                    android:text="@string/tanggal2_pantry" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/emptyGroceriesContent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
+                android:background="@color/background"
                 android:gravity="center"
                 android:paddingLeft="24sp"
                 android:paddingRight="24sp"
                 android:text="@string/empty_groceries_content"
                 android:textSize="20sp" />
+
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/groceriesFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/footer"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="12sp"
+                    android:background="@drawable/button_home" />
+
+                <Button
+                    android:id="@+id/pantryButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginLeft="12sp"
+                    android:background="@drawable/button_pantry" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
