@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ebebeb"
     tools:context=".MainActivity">
 
 
@@ -17,10 +18,10 @@
         tools:ignore="MissingConstraints"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textnama2"/>
+        android:layout_above="@+id/textnama"/>
 
     <TextView
-        android:id="@+id/textnama2"
+        android:id="@+id/textnama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Raw Food Pedia"
@@ -31,14 +32,14 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textTagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="M a n a g e s   Y o u r   G r o c e r i e s"
         android:textStyle="italic"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textnama2"
+        android:layout_below="@+id/textnama"
         tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
