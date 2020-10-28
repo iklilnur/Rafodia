@@ -9,52 +9,89 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:padding="20sp">
+        android:background="@color/background"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/titleInputItem"
+        <RelativeLayout
+            android:id="@+id/groceriesHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_input_item"
-            android:textSize="24sp" />
+            android:background="@color/header"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
 
-        <TextView
-            android:id="@+id/subtitleInputItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle_input_item"
-            android:textSize="18sp" />
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/button_back" />
+
+            <TextView
+                android:id="@+id/iconAplikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/icon"
+                android:textColor="@color/background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pantryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconAplikasi"
+                android:layout_alignParentRight="true"
+                android:text="@string/title_pantry"
+                android:textColor="@color/background" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="0.5"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20sp">
 
-            <TextView
-                android:id="@+id/selectLabel"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/item_input_item"
-                android:textSize="18sp" />
+                android:layout_marginBottom="12sp">
+
+                <TextView
+                    android:id="@+id/filledGroceriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="0sp"
+                    android:background="@color/background"
+                    android:gravity="center_vertical"
+                    android:text="@string/title_groceries"
+                    android:textColor="@color/footer"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/filledGroceriesTitle"
+                    android:text="@string/tanggal1_pantry" />
+            </RelativeLayout>
 
             <MultiAutoCompleteTextView
                 android:id="@+id/selectInputItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24sp"
-                android:hint="Select here..."
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/quantity_input_item"
+                android:fontFamily="arial"
+                android:hint="Pilih jenis bahan..."
+                android:textColorHint="@android:color/black"
                 android:textSize="18sp" />
 
             <EditText
@@ -63,8 +100,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="48sp"
                 android:ems="10"
-                android:hint="Enter a number.."
-                android:inputType="number" />
+                android:hint="Masukkan jumlah..."
+                android:inputType="number"
+                android:textColorHint="@android:color/black" />
 
             <Button
                 android:id="@+id/buttonInputItem"
@@ -74,6 +112,39 @@
                 android:text="@string/button_input_item"
                 android:textColor="@color/white" />
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/groceriesFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/footer"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="12sp"
+                    android:background="@drawable/button_home" />
+
+                <Button
+                    android:id="@+id/pantryButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginLeft="12sp"
+                    android:background="@drawable/button_pantry" />
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
