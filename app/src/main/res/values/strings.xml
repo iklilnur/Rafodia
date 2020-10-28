@@ -33,5 +33,7 @@
     <string name="button_input_item">Add</string>
     <!-- Start Page -->
     <string name="title_start_page">RAFODIA</string>
+    <string name="textTagline">M a n a g e s    Y o u r    G r o c e r i e s</string>
+    <string name="textnama">Raw Food Pedia</string>
 
 </resources>

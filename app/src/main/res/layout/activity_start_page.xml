@@ -12,7 +12,7 @@
         android:id="@+id/text_rafodia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textnama2"
+        android:layout_above="@+id/textnama"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/title_start_page"
@@ -26,24 +26,20 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Raw Food Pedia"
-        android:textStyle="bold"
+        android:text="@string/textnama"
+        android:fontFamily="@font/ARIALNB"
         android:textSize="7pt"
-        android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textTagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textnama2"
+        android:layout_below="@+id/textnama"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="M a n a g e s   Y o u r   G r o c e r i e s"
-        android:textStyle="italic"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textnama2"
+        android:text="@string/textTagline"
+        android:fontFamily="@font/ARIALNI"
         tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
