@@ -9,22 +9,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:padding="20sp">
+        android:background="@color/background"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/titleInputGroceries"
+        <RelativeLayout
+            android:id="@+id/groceriesHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_input_groceries"
-            android:textSize="24sp" />
+            android:background="@color/header"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/button_back" />
+
+            <TextView
+                android:id="@+id/iconAplikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/icon"
+                android:textColor="@color/background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pantryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconAplikasi"
+                android:layout_alignParentRight="true"
+                android:text="@string/title_pantry"
+                android:textColor="@color/background" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
+            android:layout_weight="0.5"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20sp">
 
             <TextView
                 android:id="@+id/contentInputGroceries"
@@ -33,6 +65,7 @@
                 android:layout_marginBottom="24sp"
                 android:gravity="center"
                 android:text="@string/content_input_groceries"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <EditText
@@ -42,7 +75,9 @@
                 android:layout_marginBottom="64sp"
                 android:ems="10"
                 android:hint="Enter a date..."
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black" />
 
             <Button
                 android:id="@+id/buttonInputGroceries"
@@ -52,6 +87,39 @@
                 android:text="@string/button_input_groceries"
                 android:textColor="@color/white" />
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/groceriesFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/footer"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="12sp"
+                    android:background="@drawable/button_home" />
+
+                <Button
+                    android:id="@+id/pantryButton"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginLeft="12sp"
+                    android:background="@drawable/button_pantry" />
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

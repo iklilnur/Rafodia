@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
-    <color name="buttonPantry">#448AFF</color>
+    <color name="buttonPantry">#fa7f72</color>
+    <color name="button">#fa7f72</color>
+    <color name="background">#ebebeb</color>
+    <color name="footer">#f5a25d</color>
+    <color name="header">#389393</color>
+    <color name="free">#fa7f72</color>
 </resources>
