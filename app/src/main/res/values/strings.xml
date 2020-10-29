@@ -9,29 +9,31 @@
     <string name="qty1_pantry">Qty: 2</string>
     <string name="tanggal2_pantry">10/21/2020</string>
     <string name="qty2_pantry">Qty: 0</string>
-    <string name="kadaluarsa">Some foods may be nearly expired.</string>
+    <string name="kadaluarsa">Beberapa bahan mungkin akan segera kadaluarsa.</string>
     <!-- Groceries String -->
     <string name="title_groceries">Groceries</string>
     <!-- Empty Groceries String -->
-    <string name="empty_groceries_content">Your groceries is empty. Tap the + button to add an item.</string>
+    <string name="empty_groceries_content">Groceries Anda kosong. Tekan tombol + untuk menambahkan barang.</string>
     <!-- Filled Groceries String -->
-    <string name="item2_name">Potato</string>
-    <string name="item2_expire">Will be expired in 2 days</string>
+    <string name="item2_name">Kentang</string>
+    <string name="item2_expire">Akan kadalurasa dalam 2 hari</string>
     <string name="item2_qty">Qty: 1 Kg</string>
-    <string name="item1_name">Beef</string>
-    <string name="item1_expire">Will be expired in 1 days</string>
-    <string name="item1_qty">Qty: 5 Kg</string>
+    <string name="item1_name">Daging Sapi</string>
+    <string name="item1_expire">Akan kadaluarsa dalam 1 hari</string>
+    <string name="item1_qty">Qty: 0.5 Kg</string>
     <!-- Input Groceries -->
-    <string name="title_input_groceries">Add a new date</string>
-    <string name="content_input_groceries">Enter a new date in the form below</string>
-    <string name="button_input_groceries">Save</string>
+    <string name="title_input_groceries">Tambahkan tanggal baru</string>
+    <string name="content_input_groceries">Tambahkan tanggal pada form dibawah ini</string>
+    <string name="button_input_groceries">Simpan</string>
     <!-- Input Item -->
-    <string name="title_input_item">Add a new item</string>
+    <string name="title_input_item">Tambahkan barang baru</string>
     <string name="subtitle_input_item">10/22/2020</string>
-    <string name="item_input_item">Select Item</string>
-    <string name="quantity_input_item">Item Quantity</string>
-    <string name="button_input_item">Add</string>
+    <string name="item_input_item">Pilih jenis barang</string>
+    <string name="quantity_input_item">Jumlah</string>
+    <string name="button_input_item">Tambah</string>
     <!-- Start Page -->
     <string name="title_start_page">RAFODIA</string>
+    <string name="textTagline">M a n a g e s    Y o u r    G r o c e r i e s</string>
+    <string name="textnama">Raw Food Pedia</string>
 
 </resources>
