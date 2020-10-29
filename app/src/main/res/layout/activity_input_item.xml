@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/fonts"
                 android:text="@string/icon"
                 android:textColor="@color/background"
                 android:textSize="18sp"
@@ -46,8 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/arialn"
                 android:text="@string/title_pantry"
-                android:textColor="@color/background" />
+                android:textColor="@color/background"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -68,12 +71,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginBottom="0sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/arialnb"
                     android:gravity="center_vertical"
                     android:text="@string/title_groceries"
                     android:textColor="@color/footer"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -81,7 +84,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/filledGroceriesTitle"
-                    android:text="@string/tanggal1_pantry" />
+                    android:fontFamily="@font/arialn"
+                    android:text="@string/tanggal1_pantry"
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <MultiAutoCompleteTextView
@@ -89,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24sp"
-                android:fontFamily="arial"
+                android:fontFamily="@font/arialn"
                 android:hint="Pilih jenis bahan..."
                 android:textColorHint="@android:color/black"
                 android:textSize="18sp" />
@@ -100,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="48sp"
                 android:ems="10"
+                android:fontFamily="@font/arialn"
                 android:hint="Masukkan jumlah..."
                 android:inputType="number"
                 android:textColorHint="@android:color/black" />
@@ -109,6 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/buttonPantry"
+                android:fontFamily="@font/arialnb"
                 android:text="@string/button_input_item"
                 android:textColor="@color/white" />
         </LinearLayout>

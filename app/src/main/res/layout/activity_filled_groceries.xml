@@ -47,8 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/arialn"
                 android:text="@string/title_pantry"
-                android:textColor="@color/background" />
+                android:textColor="@color/background"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -75,6 +77,7 @@
                     android:layout_marginLeft="0sp"
                     android:layout_marginRight="0sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/arialnb"
                     android:text="@string/plus"
                     android:textColor="@color/footer"
                     android:textSize="38sp" />
@@ -86,10 +89,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginBottom="0sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/arialnb"
                     android:gravity="center_vertical"
                     android:text="@string/title_groceries"
                     android:textColor="@color/footer"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -97,7 +101,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/filledGroceriesTitle"
-                    android:text="@string/tanggal1_pantry" />
+                    android:fontFamily="@font/arialn"
+                    android:text="@string/tanggal1_pantry"
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -113,9 +119,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_toRightOf="@id/itemPict2"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/item2_name"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/itemExpire2"
@@ -124,8 +131,10 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="12sp"
                     android:layout_toRightOf="@id/itemPict2"
+                    android:fontFamily="@font/arialni"
                     android:text="@string/item2_expire"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/itemQty2"
@@ -134,6 +143,7 @@
                     android:layout_alignRight="@id/itemName2"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/item2_qty"
                     android:textColor="@color/white" />
 
@@ -160,9 +170,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_toRightOf="@id/itemPict1"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/item1_name"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/itemExpire1"
@@ -171,8 +182,10 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="12sp"
                     android:layout_toRightOf="@id/itemPict1"
+                    android:fontFamily="@font/arialni"
                     android:text="@string/item1_expire"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/itemQty1"
@@ -181,6 +194,7 @@
                     android:layout_alignRight="@id/itemName1"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/item1_qty"
                     android:textColor="@color/white" />
 

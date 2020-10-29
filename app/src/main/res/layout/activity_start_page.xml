@@ -24,10 +24,9 @@
         android:id="@+id/textnama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/arialnb"
         android:text="@string/textnama"
-        android:fontFamily="@font/ARIALNB"
         android:textSize="7pt"
         tools:ignore="MissingConstraints" />
 
@@ -36,10 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textnama"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/arialni"
         android:text="@string/textTagline"
-        android:fontFamily="@font/ARIALNI"
         tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
