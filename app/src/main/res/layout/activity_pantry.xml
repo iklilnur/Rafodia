@@ -46,8 +46,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/arialn"
                 android:text="@string/title_pantry"
-                android:textColor="@color/background" />
+                android:textColor="@color/background"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -64,10 +66,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12sp"
                 android:background="@color/background"
+                android:fontFamily="@font/arialnb"
                 android:gravity="center_vertical"
                 android:text="@string/title_pantry"
                 android:textColor="@color/footer"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <RelativeLayout
@@ -84,9 +87,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/tanggal2_pantry"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
 
                 <TextView
@@ -96,6 +100,7 @@
                     android:layout_alignRight="@id/tanggal2Pantry"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/qty2_pantry"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
@@ -114,9 +119,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/tanggal1_pantry"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/expiredFood"
@@ -125,6 +131,7 @@
                     android:layout_below="@id/tanggal1Pantry"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/arialni"
                     android:text="@string/kadaluarsa"
                     android:textColor="#FFD740"
                     android:textStyle="italic" />
@@ -136,6 +143,7 @@
                     android:layout_alignRight="@id/tanggal1Pantry"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialn"
                     android:text="@string/qty1_pantry"
                     android:textColor="@color/white"
                     android:textSize="14sp" />

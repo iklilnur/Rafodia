@@ -51,8 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/arialn"
                 android:text="@string/title_pantry"
-                android:textColor="@color/background" />
+                android:textColor="@color/background"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -78,6 +80,7 @@
                     android:layout_marginLeft="0sp"
                     android:layout_marginRight="0sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/arialnb"
                     android:text="@string/plus"
                     android:textColor="@color/footer"
                     android:textSize="38sp" />
@@ -89,10 +92,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginBottom="0sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/arialnb"
                     android:gravity="center_vertical"
                     android:text="@string/title_groceries"
                     android:textColor="@color/footer"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -100,7 +104,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/filledGroceriesTitle"
-                    android:text="@string/tanggal2_pantry" />
+                    android:fontFamily="@font/arialn"
+                    android:text="@string/tanggal2_pantry"
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <TextView
@@ -108,11 +114,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background"
+                android:fontFamily="@font/arialn"
                 android:gravity="center"
                 android:paddingLeft="24sp"
                 android:paddingRight="24sp"
                 android:text="@string/empty_groceries_content"
-                android:textSize="20sp" />
+                android:textSize="22sp" />
 
         </LinearLayout>
 

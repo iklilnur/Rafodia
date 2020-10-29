@@ -46,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/arialn"
                 android:text="@string/title_pantry"
                 android:textColor="@color/background" />
         </RelativeLayout>
@@ -63,10 +64,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24sp"
+                android:fontFamily="@font/arialnb"
                 android:gravity="center"
                 android:text="@string/content_input_groceries"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textColor="@color/footer"
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/formInputGroceries"
@@ -74,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="64sp"
                 android:ems="10"
+                android:fontFamily="@font/arialn"
                 android:hint="Enter a date..."
                 android:inputType="date"
                 android:textColor="@android:color/black"
@@ -84,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/buttonPantry"
+                android:fontFamily="@font/arialnb"
                 android:text="@string/button_input_groceries"
                 android:textColor="@color/white" />
         </LinearLayout>
