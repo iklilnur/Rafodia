@@ -3,7 +3,7 @@
     <font
         android:font="@font/arialn"/>
     <font
-        android:font="@font/arialnb"/>
+        android:font="@font/arialnb" />
     <font
         android:font="@font/arialni"/>
 
