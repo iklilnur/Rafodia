@@ -10,4 +10,5 @@
     <color name="footer">#f5a25d</color>
     <color name="header">#389393</color>
     <color name="free">#fa7f72</color>
+    <color name="shadow">#393939</color>
 </resources>
