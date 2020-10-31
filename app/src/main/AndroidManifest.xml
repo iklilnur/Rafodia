@@ -2,34 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rutepantry">
 
-    <application
+    <aplication
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Foodpedia_category"></activity>
+
+        <activity android:name=".Foodpedia_category"/>
         <activity android:name=".Home" />
         <activity android:name=".StartPage" />
-        <activity android:name=".Home"></activity>
-        <activity android:name=".StartPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".InputItem" />
-        <activity android:name=".InputGroceries" />
-        <activity android:name=".FilledGroceries" />
-        <activity android:name=".EmptyGroceries" />
-        <activity android:name=".CategoryItem" />
-        <activity android:name=".ItemDetail" />
-        <activity android:name=".itemDetail2" />
-        <activity android:name=".itemDetail3" />
-        <activity android:name=".Pantry">
-        </activity>
-    </application>
+
+            <activity android:name=".InputItem" />
+            <activity android:name=".InputGroceries" />
+            <activity android:name=".FilledGroceries" />
+            <activity android:name=".EmptyGroceries" />
+            <activity android:name=".CategoryItem" />
+            <activity android:name=".ItemDetail" />
+            <activity android:name=".itemDetail2" />
+            <activity android:name=".itemDetail3" />
+            <activity android:name=".Pantry"/>
+
+        </aplication>
+    </manifest>
 
 </manifest>

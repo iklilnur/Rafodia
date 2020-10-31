@@ -26,7 +26,6 @@ public class Home extends AppCompatActivity {
                 pantry();
             }
         });
-
         food_pedia.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -36,7 +35,8 @@ public class Home extends AppCompatActivity {
     }
 
     public void foodPedia(){
-
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        startActivity(intent);
     }
 
     public void pantry(){
