@@ -12,6 +12,14 @@
         <activity android:name=".Foodpedia_category"></activity>
         <activity android:name=".Home" />
         <activity android:name=".StartPage" />
+        <activity android:name=".Home"></activity>
+        <activity android:name=".StartPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".InputItem" />
         <activity android:name=".InputGroceries" />
         <activity android:name=".FilledGroceries" />
@@ -21,11 +29,6 @@
         <activity android:name=".itemDetail2" />
         <activity android:name=".itemDetail3" />
         <activity android:name=".Pantry">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
