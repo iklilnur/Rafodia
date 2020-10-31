@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CategoryItem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="0sp">
+
+        <RelativeLayout
+        android:id="@+id/groceriesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header"
+        android:paddingLeft="20sp"
+        android:paddingTop="10sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="10sp">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_back" />
+
+        <TextView
+            android:id="@+id/iconAplikasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/icon"
+            android:textColor="@color/background"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/categoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iconAplikasi"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/arialn"
+            android:text="@string/title_foodpedia_categories"
+            android:textColor="@color/background"
+            android:textSize="16sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.5"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:padding="20sp">
+
+        <TextView
+            android:id="@+id/titleCategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12sp"
+            android:background="@color/background"
+            android:fontFamily="@font/arialnb"
+            android:gravity="center_vertical"
+            android:text="@string/title_category_name"
+            android:textColor="@color/footer"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <SearchView
+                    android:id="@+id/searchItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/sortButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/searchItem"
+                    android:text="@string/title_sort"
+                    android:background="@color/header"
+                    android:fontFamily="@font/arialnb"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20sp">
+                <Button
+                    android:id="@+id/Item1Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item1_sayur"
+                    android:background="@color/button"/>
+                <Button
+                    android:id="@+id/Item2Button"
+                    android:layout_below="@+id/Item1Button"
+                    android:layout_marginTop="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item2_sayur"
+                    android:background="@color/button"/>
+                <Button
+                    android:id="@+id/Item3Button"
+                    android:layout_below="@+id/Item2Button"
+                    android:layout_marginTop="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item3_sayur"
+                    android:background="@color/button"/>
+            </RelativeLayout>
+    </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/groceriesFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/footer"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp">
+
+            <Button
+                android:id="@+id/foodpediaButton"
+                style="@android:style/Widget.Button"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginLeft="10sp"
+                android:layout_toRightOf="@id/homeButton"
+                android:background="@drawable/button_foodpedia2" />
+
+
+
+            <Button
+                android:id="@+id/homeButton"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginRight="10sp"
+                android:background="@drawable/button_home" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

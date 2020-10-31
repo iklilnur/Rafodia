@@ -15,7 +15,12 @@
         <activity android:name=".InputGroceries" />
         <activity android:name=".FilledGroceries" />
         <activity android:name=".EmptyGroceries" />
+        <activity android:name=".CategoryItem"/>
+        <activity android:name=".ItemDetail" />
+        <activity android:name=".itemDetail2" />
+        <activity android:name=".itemDetail3" />
         <activity android:name=".Pantry">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

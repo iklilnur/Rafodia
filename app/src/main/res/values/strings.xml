@@ -36,4 +36,22 @@
     <string name="textTagline">M a n a g e s    Y o u r    G r o c e r i e s</string>
     <string name="textnama">R A F O D I A</string>
 
+    <!--list item-->
+    <string name="title_foodpedia_categories">Foodpedia-Sayuran</string>
+    <string name="title_category_name">Sayuran</string>
+    <string name="title_sort">Sort A to Z</string>
+    <string name="item1_sayur">Kangkung</string>
+    <string name="item2_sayur">Bayam</string>
+    <string name="item3_sayur">Kentang</string>
+
+    <!--item detail-->
+    <string name="title_detail">Informasi Bahan-Kangkung</string>
+    <string name="title_detail2">Informasi Bahan-Bayam</string>
+    <string name="title_detail3">Informasi Bahan-Kentang</string>
+    <string name="title_cara_simpan">Cara Penyimpanan:</string>
+    <string name="title_tingkat_kesegaran">Tingkat Kesegaran:</string>
+    <string name="content_kangkung">Simpan dalam kulkas tanpa perlu mencucinya terlebih dahulu.</string>
+    <string name="content_kentang">Simpan di tempat yang kering dan teduh.</string>
+    <string name="content_segar_kangkung">-</string>
+
 </resources>
