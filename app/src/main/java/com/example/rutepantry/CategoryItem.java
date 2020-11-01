@@ -86,11 +86,11 @@ public class CategoryItem extends AppCompatActivity {
         startActivity(intent);
     }
     protected void item2() {
-        Intent intent = new Intent(this, itemDetail2.class);
+        Intent intent = new Intent(this, ItemDetail2.class);
         startActivity(intent);
     }
     protected void item3(){
-        Intent intent = new Intent(this, itemDetail3.class);
+        Intent intent = new Intent(this, ItemDetail3.class);
         startActivity(intent);
 
     } }
