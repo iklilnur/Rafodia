@@ -21,6 +21,7 @@ public class CategoryItem extends AppCompatActivity {
         Button item3 = (Button) findViewById(R.id.Item3Button);
 
 
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
