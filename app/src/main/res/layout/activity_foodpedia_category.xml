@@ -59,6 +59,7 @@
             android:layout_weight="0.5"
             android:background="@color/background"
             android:orientation="vertical"
+            android:overScrollMode="ifContentScrolls"
             android:padding="20sp">
 
             <TextView
@@ -78,57 +79,70 @@
                 android:textStyle="bold" />
 
 
-            <RelativeLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="30sp">
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="true">
 
-                <Button
-                    android:id="@+id/button_veg"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/rounded_button"
-                    android:gravity="center"
-                    android:text="@string/button_veg" />
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button_fruit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_veg"
-                    android:layout_marginTop="30sp"
-                    android:background="@drawable/rounded_button"
-                    android:text="@string/button_fruit" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:padding="30sp">
 
-                <Button
-                    android:id="@+id/button_meat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_fruit"
-                    android:layout_marginTop="30sp"
-                    android:background="@drawable/rounded_button"
-                    android:text="@string/button_meat" />
+                        <Button
+                            android:id="@+id/button_veg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/rounded_button"
+                            android:gravity="center"
+                            android:text="@string/button_veg" />
 
-                <Button
-                    android:id="@+id/button_seafood"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_meat"
-                    android:layout_marginTop="30sp"
-                    android:background="@drawable/rounded_button"
-                    android:text="@string/button_seafood" />
+                        <Button
+                            android:id="@+id/button_fruit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/button_veg"
+                            android:layout_marginTop="20sp"
+                            android:background="@drawable/rounded_button"
+                            android:text="@string/button_fruit" />
 
-                <Button
-                    android:id="@+id/button_other"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_seafood"
-                    android:layout_marginTop="30sp"
-                    android:background="@drawable/rounded_button"
-                    android:text="@string/button_other" />
+                        <Button
+                            android:id="@+id/button_meat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/button_fruit"
+                            android:layout_marginTop="20sp"
+                            android:background="@drawable/rounded_button"
+                            android:text="@string/button_meat" />
 
-            </RelativeLayout>
+                        <Button
+                            android:id="@+id/button_seafood"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/button_meat"
+                            android:layout_marginTop="20sp"
+                            android:background="@drawable/rounded_button"
+                            android:text="@string/button_seafood" />
+
+                        <Button
+                            android:id="@+id/button_other"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/button_seafood"
+                            android:layout_marginTop="20sp"
+                            android:background="@drawable/rounded_button"
+                            android:text="@string/button_other" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
 
         <RelativeLayout

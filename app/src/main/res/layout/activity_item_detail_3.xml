@@ -48,13 +48,16 @@
                 android:textColor="@color/background"
                 android:textSize="16sp" />
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="0.5"
             android:background="@color/background"
             android:orientation="vertical"
+            android:overScrollMode="ifContentScrolls"
             android:padding="20sp">
+
             <TextView
                 android:id="@+id/titleDetailCategory"
                 android:layout_width="wrap_content"
@@ -68,66 +71,78 @@
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/imgItem"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:layout_marginBottom="20sp"
-                android:background="@drawable/kentang" />
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="true">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/rounded_button"
-                android:padding="10sp"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp">
-
-                <TextView
-                    android:id="@+id/textPenyimpanan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/arialnb"
-                    android:text="@string/title_cara_simpan"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textContent1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textPenyimpanan"
-                    android:fontFamily="@font/arialni"
-                    android:text="@string/content_kentang"
-                    android:textSize="18sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/rounded_button"
-                android:padding="10sp"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp">
-
-                <TextView
-                    android:id="@+id/textKesegara"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/arialnb"
-                    android:text="Tingkat Kesegaran:"
-                    android:textSize="18sp" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textContent2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textKesegara"
-                    android:fontFamily="@font/arialni"
-                    android:text="@string/content_segar_kangkung"
-                    android:textSize="18sp" />
-            </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/imgItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="250sp"
+                        android:layout_marginBottom="20sp"
+                        android:background="@drawable/kentang" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/rounded_button"
+                        android:padding="10sp"
+                        android:paddingTop="10sp"
+                        android:paddingBottom="10sp">
+
+                        <TextView
+                            android:id="@+id/textKesegara"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arialnb"
+                            android:text="Tingkat Kesegaran:"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textContent2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textKesegara"
+                            android:fontFamily="@font/arialni"
+                            android:text="@string/content_segar_kangkung"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/rounded_button"
+                        android:padding="10sp"
+                        android:paddingTop="10sp"
+                        android:paddingBottom="10sp">
+
+                        <TextView
+                            android:id="@+id/textPenyimpanan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arialnb"
+                            android:text="@string/title_cara_simpan"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textContent1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textPenyimpanan"
+                            android:fontFamily="@font/arialni"
+                            android:text="@string/content_kentang"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
         <RelativeLayout

@@ -66,7 +66,9 @@ public class Pantry extends AppCompatActivity {
 
     protected void home(){
         Intent intent = new Intent(this, StartPage.class);
-        startActivity(intent);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     protected void addPantry(){
@@ -75,8 +77,9 @@ public class Pantry extends AppCompatActivity {
     }
 
     protected void back(){
-        Intent intent = new Intent(this, StartPage.class);
+        Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
         startActivityIfNeeded(intent, 0);
     }
 }
