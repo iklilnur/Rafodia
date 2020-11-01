@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_start"
-    tools:context=".Pantry">
+    tools:context=".StartPage">
 
 
     <TextView
         android:id="@+id/text_rafodia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="135sp"
+        android:layout_height="150sp"
         android:layout_above="@+id/textnama"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/title_start_page"
-        android:textSize="10pt"
-        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:background="@drawable/logo_depan"
+        android:shadowColor="@color/shadow"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:fontFamily="@font/arialnb"
+        android:fontFamily="@font/ARIALNB"
         android:shadowColor="@color/shadow"
         android:shadowDx="2"
         android:shadowDy="2"
@@ -41,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textnama"
         android:layout_centerInParent="true"
-        android:fontFamily="@font/arialni"
+        android:fontFamily="@font/ARIALNI"
         android:shadowColor="@color/shadow"
         android:shadowDx="2"
         android:shadowDy="2"

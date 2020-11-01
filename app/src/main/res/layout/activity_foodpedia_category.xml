@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Foodpedia_category">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,16 +27,16 @@
                 android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="false"
                 android:background="@drawable/button_back" />
 
             <TextView
                 android:id="@+id/iconAplikasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_width="30sp"
+                android:layout_height="40sp"
                 android:layout_alignParentRight="true"
-                android:background="draw"
-                android:text="@string/icon"
+                android:background="@drawable/mix_2"
                 android:textColor="@color/background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -46,10 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
-                android:fontFamily="@font/arialn"
-                android:text="@string/title_foodpedia_categories"
+                android:fontFamily="@font/ARIALNB"
+                android:text="@string/button_foodPedia"
                 android:textColor="@color/background"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -61,13 +62,16 @@
             android:padding="20sp">
 
             <TextView
-                android:id="@+id/titleCategory1"
+                android:id="@+id/titleCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12sp"
-                android:background="@color/footer"
-                android:fontFamily="@font/arialnb"
+                android:fontFamily="@font/ARIALNB"
                 android:gravity="center_vertical"
+                android:shadowColor="@color/shadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="3"
                 android:text="@string/title_category"
                 android:textColor="@color/footer"
                 android:textSize="22sp"
