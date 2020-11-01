@@ -76,8 +76,10 @@ public class Foodpedia_category extends AppCompatActivity {
     }
 
     public void home() {
-        Intent intent = new Intent(this, Home.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, StartPage.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     public void otherIngredients() {
@@ -104,9 +106,10 @@ public class Foodpedia_category extends AppCompatActivity {
         Intent intent = new Intent(this, CategoryItem.class);
         startActivity(intent);
     }
-    protected void back(){
+    protected void back() {
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
         startActivityIfNeeded(intent, 0);
-
-}}
+    }
+}

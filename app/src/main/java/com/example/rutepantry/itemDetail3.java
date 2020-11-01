@@ -40,21 +40,23 @@ public class itemDetail3 extends AppCompatActivity {
     }
     protected void home() {
         Intent intent = new Intent(this, StartPage.class);
-        startActivity(intent);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     protected void back(){
         Intent intent = new Intent(this, CategoryItem.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivityIfNeeded(intent, 0);
         finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     protected void foodpedia() {
-    Intent intent = new Intent (this, Foodpedia_category.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-    startActivityIfNeeded(intent, 0);
-    finish();
+        Intent intent = new Intent (this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 }
 

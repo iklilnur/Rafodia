@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_start"
-    tools:context=".StartPage">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_start"
+        tools:context=".StartPage">
 
 
-    <TextView
-        android:id="@+id/text_rafodia"
-        android:layout_width="135sp"
-        android:layout_height="150sp"
-        android:layout_above="@+id/textnama"
-        android:layout_centerInParent="true"
-        android:background="@drawable/logo_depan"
-        android:shadowColor="@color/shadow"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="10"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/text_rafodia"
+            android:layout_width="135sp"
+            android:layout_height="150sp"
+            android:layout_above="@+id/textnama"
+            android:layout_centerInParent="true"
+            android:background="@drawable/logo_depan"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textnama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/arialnb"
-        android:shadowColor="@color/shadow"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="5"
-        android:text="@string/textnama"
-        android:textColor="@color/background"
-        android:textSize="10pt"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/textnama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/arialnb"
+            android:text="@string/textnama"
+            android:textColor="@color/background"
+            android:textSize="10pt"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textTagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textnama"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/arialni"
-        android:shadowColor="@color/shadow"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="5"
-        android:text="@string/textTagline"
-        android:textColor="@color/background"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/textTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textnama"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/arialni"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="5"
+            android:text="@string/textTagline"
+            android:textColor="@color/background"
+            tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+    </RelativeLayout>

@@ -51,8 +51,8 @@ public class FilledGroceries extends AppCompatActivity {
     protected void back(){
         Intent intent = new Intent(this, Pantry.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivityIfNeeded(intent, 0);
         finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     protected void home(){
@@ -62,9 +62,7 @@ public class FilledGroceries extends AppCompatActivity {
 
     protected void pantry(){
         Intent intent = new Intent(this, Pantry.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivityIfNeeded(intent, 0);
-        finish();
+        startActivity(intent);
     }
 
 
