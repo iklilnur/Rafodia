@@ -20,7 +20,13 @@ public class StartPage extends AppCompatActivity {
             public void run() {
                 home();
             }
-        }, 3000);
+        }, 2000);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //remove call to the super class
+        //super.onBackPressed();
     }
 
     public void home(){

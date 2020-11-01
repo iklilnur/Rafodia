@@ -14,8 +14,8 @@ public class CategoryItem extends AppCompatActivity {
         setContentView(R.layout.activity_category_item);
 
         Button home = (Button) findViewById(R.id.homeButton);
-        //Button back_button = (Button) findViewById(R.id.backButton);
-        //Button foodpedia = (Button) findViewById((R.id.foodpediaButton);
+        Button back_button = (Button) findViewById(R.id.backButton);
+        Button foodpedia = (Button) findViewById(R.id.foodpediaButton);
         Button item1 = (Button) findViewById(R.id.Item1Button);
         Button item2 = (Button) findViewById(R.id.Item2Button);
         Button item3 = (Button) findViewById(R.id.Item3Button);
@@ -27,19 +27,19 @@ public class CategoryItem extends AppCompatActivity {
                 home();
             }
         });
-        //back_button.setOnClickListener(new View.OnClickListener() {
-           // @Override
-            //public void onClick(View view) {
-                //back();
-            //}
-        //});
+        back_button.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view) {
+               back();
+            }
+        });
 
-        //foodpedia.setOnClickListener(new View.OnClickListener() {
-           // @Override
-            //public void onClick(View view) {
-                //foodpedia();
-            //}
-       // });
+        foodpedia.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view) {
+               foodpedia();
+            }
+       });
 
         item1.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -67,19 +67,19 @@ public class CategoryItem extends AppCompatActivity {
         Intent intent = new Intent(this, StartPage.class);
         startActivity(intent);
     }
-    //protected void back(){
-        //Intent intent = new Intent(this, .class); (--kembali ke pilihan kategori activity B--)
-        //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        //startActivityIfNeeded(intent, 0);
-        //finish();
-    //}
+    protected void back(){
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
+    }
 
-    //protected void foodpedia() {
-    //Intent intent = new Intent (this, .class) (--kembali ke pilihan kategori, activity B--)
-    //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-    //startActivityIfNeeded(intent, 0);
-   // finish();
-    //}
+    protected void foodpedia() {
+        Intent intent = new Intent (this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
+    }
 
     protected void item1(){
         Intent intent = new Intent(this, ItemDetail.class);
@@ -92,5 +92,5 @@ public class CategoryItem extends AppCompatActivity {
     protected void item3(){
         Intent intent = new Intent(this, itemDetail3.class);
         startActivity(intent);
-    }
-}
+
+    } }

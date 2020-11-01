@@ -32,14 +32,13 @@
 
             <TextView
                 android:id="@+id/iconAplikasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_width="30sp"
+                android:layout_height="40sp"
                 android:layout_alignParentRight="true"
-                android:text="@string/icon"
+                android:background="@drawable/mix_2"
                 android:textColor="@color/background"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"  />
 
             <TextView
                 android:id="@+id/pantryTitle"
@@ -59,6 +58,7 @@
             android:layout_weight="0.5"
             android:background="@color/background"
             android:orientation="vertical"
+            android:overScrollMode="ifContentScrolls"
             android:padding="20sp">
 
             <RelativeLayout
@@ -106,108 +106,122 @@
                     android:textSize="16sp" />
             </RelativeLayout>
 
-            <RelativeLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="80sp"
-                android:layout_marginBottom="20sp"
-                android:background="@drawable/rounded_button"
-                android:padding="15sp">
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="true">
 
-                <TextView
-                    android:id="@+id/itemName2"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_toRightOf="@id/itemPict2"
-                    android:fontFamily="@font/arialn"
-                    android:text="@string/item2_name"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/itemExpire2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="12sp"
-                    android:layout_toRightOf="@id/itemPict2"
-                    android:fontFamily="@font/arialni"
-                    android:text="@string/item2_expire"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80sp"
+                        android:layout_marginBottom="20sp"
+                        android:background="@drawable/rounded_button"
+                        android:padding="15sp">
 
-                <TextView
-                    android:id="@+id/itemQty2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/itemName2"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:fontFamily="@font/arialn"
-                    android:text="@string/item2_qty"
-                    android:textColor="@color/white" />
+                        <TextView
+                            android:id="@+id/itemName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12sp"
+                            android:layout_toRightOf="@id/itemPict2"
+                            android:fontFamily="@font/arialn"
+                            android:text="@string/item2_name"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/itemPict2"
-                    android:layout_width="60sp"
-                    android:layout_height="60sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true"
-                    android:background="@color/white"
-                    app:srcCompat="@drawable/kentang" />
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/itemExpire2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="12sp"
+                            android:layout_toRightOf="@id/itemPict2"
+                            android:fontFamily="@font/arialni"
+                            android:text="@string/item2_expire"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="80sp"
-                android:background="@drawable/rounded_button"
-                android:padding="15sp">
+                        <TextView
+                            android:id="@+id/itemQty2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/itemName2"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/arialn"
+                            android:text="@string/item2_qty"
+                            android:textColor="@color/white" />
 
-                <TextView
-                    android:id="@+id/itemName1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_toRightOf="@id/itemPict1"
-                    android:fontFamily="@font/arialn"
-                    android:text="@string/item1_name"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+                        <ImageView
+                            android:id="@+id/itemPict2"
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:layout_centerInParent="true"
+                            android:background="@color/white"
+                            app:srcCompat="@drawable/kentang" />
+                    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/itemExpire1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="12sp"
-                    android:layout_toRightOf="@id/itemPict1"
-                    android:fontFamily="@font/arialni"
-                    android:text="@string/item1_expire"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80sp"
+                        android:background="@drawable/rounded_button"
+                        android:padding="15sp">
 
-                <TextView
-                    android:id="@+id/itemQty1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/itemName1"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:fontFamily="@font/arialn"
-                    android:text="@string/item1_qty"
-                    android:textColor="@color/white" />
+                        <TextView
+                            android:id="@+id/itemName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12sp"
+                            android:layout_toRightOf="@id/itemPict1"
+                            android:fontFamily="@font/arialn"
+                            android:text="@string/item1_name"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/itemPict1"
-                    android:layout_width="60sp"
-                    android:layout_height="60sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true"
-                    android:background="@color/white"
-                    app:srcCompat="@drawable/daging_sapi" />
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/itemExpire1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="12sp"
+                            android:layout_toRightOf="@id/itemPict1"
+                            android:fontFamily="@font/arialni"
+                            android:text="@string/item1_expire"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/itemQty1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/itemName1"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/arialn"
+                            android:text="@string/item1_qty"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/itemPict1"
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:layout_centerInParent="true"
+                            android:background="@color/white"
+                            app:srcCompat="@drawable/daging_sapi" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
 
         <RelativeLayout

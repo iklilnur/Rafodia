@@ -39,12 +39,12 @@
     <string name="textnama">R A F O D I A</string>
 
     <!--list item-->
-    <string name="title_category">Category</string>
-    <string name="button_veg">Vegetables</string>
-    <string name="button_fruit">Fruit</string>
-    <string name="button_meat">Meat</string>
+    <string name="title_category">Kategori</string>
+    <string name="button_veg">Sayuran</string>
+    <string name="button_fruit">Buah</string>
+    <string name="button_meat">Daging</string>
     <string name="button_seafood">Seafood</string>
-    <string name="button_other">Other Ingredients</string>
+    <string name="button_other">Bahan Lainnya</string>
     <string name="title_foodpedia_categories">Foodpedia - Sayuran</string>
     <string name="title_category_name">Sayuran</string>
     <string name="title_sort">Sort A to Z</string>

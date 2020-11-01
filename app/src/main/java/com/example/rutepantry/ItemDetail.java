@@ -15,7 +15,7 @@ public class ItemDetail extends AppCompatActivity {
 
         Button home = (Button) findViewById(R.id.homeButton);
         Button back_button = (Button) findViewById(R.id.backButton);
-        //Button foodpedia = (Button) findViewById((R.id.foodpediaButton);
+        Button foodpedia = (Button) findViewById(R.id.foodpediaButton);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,29 +31,31 @@ public class ItemDetail extends AppCompatActivity {
         }
         });
 
-        //foodpedia.setOnClickListener(new View.OnClickListener() {
-           // @Override
-            //public void onClick(View view) {
-                //foodpedia()
-            //}
-        //});
+        foodpedia.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view) {
+                foodpedia();
+            }
+        });
     }
     protected void home() {
         Intent intent = new Intent(this, StartPage.class);
-        startActivity(intent);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 
     protected void back(){
-    Intent intent = new Intent(this, CategoryItem.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-    startActivityIfNeeded(intent, 0);
-    finish();
+        Intent intent = new Intent(this, CategoryItem.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
     }
 
-    //protected void foodpedia() {
-    //Intent intent = new Intent (this, .class) (--kembali ke pilihan kategori, activity B--)
-    //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-    //startActivityIfNeeded(intent, 0);
-    // finish();
-    //}
+    protected void foodpedia() {
+        Intent intent = new Intent (this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        finish();
+        startActivityIfNeeded(intent, 0);
+    }
 }
