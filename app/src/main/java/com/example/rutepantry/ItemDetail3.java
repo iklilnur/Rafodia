@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class itemDetail3 extends AppCompatActivity {
+public class ItemDetail3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class itemDetail3 extends AppCompatActivity {
         }
         });
     }
+
     protected void home() {
         Intent intent = new Intent(this, StartPage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

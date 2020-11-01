@@ -24,8 +24,8 @@
         <activity android:name=".EmptyGroceries" />
         <activity android:name=".CategoryItem" />
         <activity android:name=".ItemDetail" />
-        <activity android:name=".itemDetail2" />
-        <activity android:name=".itemDetail3" />
+        <activity android:name=".ItemDetail2" />
+        <activity android:name=".ItemDetail3" />
         <activity android:name=".Pantry"/>
 
     </application>
