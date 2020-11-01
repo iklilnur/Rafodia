@@ -104,9 +104,9 @@ public class Foodpedia_category extends AppCompatActivity {
         Intent intent = new Intent(this, CategoryItem.class);
         startActivity(intent);
     }
-    protected void back(){
+    protected void back() {
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivityIfNeeded(intent, 0);
-
+    }
 }
