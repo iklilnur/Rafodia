@@ -86,10 +86,15 @@
                 android:id="@+id/buttonInputGroceries"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/buttonPantry"
+                android:background="@drawable/rounded_button"
                 android:fontFamily="@font/arialnb"
+                android:paddingLeft="30sp"
+                android:paddingTop="10sp"
+                android:paddingRight="30sp"
+                android:paddingBottom="10sp"
                 android:text="@string/button_input_groceries"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <RelativeLayout

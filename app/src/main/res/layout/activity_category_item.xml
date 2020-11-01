@@ -101,10 +101,10 @@
                     android:id="@+id/Item1Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/button"
+                    android:background="@drawable/rounded_button"
                     android:fontFamily="@font/arialnb"
                     android:text="@string/item1_sayur"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/Item2Button"
@@ -112,10 +112,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/Item1Button"
                     android:layout_marginTop="20sp"
-                    android:background="@color/button"
+                    android:background="@drawable/rounded_button"
                     android:fontFamily="@font/arialnb"
                     android:text="@string/item2_sayur"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/Item3Button"
@@ -123,10 +123,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/Item2Button"
                     android:layout_marginTop="20sp"
-                    android:background="@color/button"
+                    android:background="@drawable/rounded_button"
                     android:fontFamily="@font/arialnb"
                     android:text="@string/item3_sayur"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
     </LinearLayout>
 

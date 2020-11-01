@@ -71,8 +71,8 @@
 
             <ImageView
                 android:id="@+id/imgItem"
-                android:layout_width="200sp"
-                android:layout_height="200sp"
+                android:layout_width="250sp"
+                android:layout_height="250sp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/kangkung" />
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp"
-                android:background="@color/button"
+                android:background="@drawable/rounded_button"
                 android:padding="10sp">
 
                 <TextView
@@ -106,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp"
-                android:background="@color/button"
+                android:background="@drawable/rounded_button"
                 android:padding="10sp"
                 android:paddingTop="10sp"
                 android:paddingBottom="10sp">
