@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
     <font
-        android:font="@font/ARIALN"/>
+        android:font="@font/arialn"/>
     <font
-        android:font="@font/ARIALNB" />
+        android:font="@font/arialnb" />
     <font
-        android:font="@font/ARIALNI"/>
+        android:font="@font/arialni"/>
 
 </font-family>

@@ -109,4 +109,4 @@ public class Foodpedia_category extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivityIfNeeded(intent, 0);
 
-}
+}}
