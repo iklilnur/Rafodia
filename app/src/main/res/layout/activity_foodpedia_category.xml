@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iconAplikasi"
                 android:layout_alignParentRight="true"
-                android:fontFamily="@font/ARIALNB"
+                android:fontFamily="@font/arialn"
                 android:text="@string/button_foodPedia"
                 android:textColor="@color/background"
                 android:textSize="12sp" />
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12sp"
-                android:fontFamily="@font/ARIALNB"
+                android:fontFamily="@font/arialnb"
                 android:gravity="center_vertical"
                 android:shadowColor="@color/shadow"
                 android:shadowDx="1"
@@ -80,14 +80,16 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="506dp"
+                android:layout_height="wrap_content"
                 android:padding="30sp">
 
                 <Button
                     android:id="@+id/button_veg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/button"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
                     android:text="@string/button_veg" />
 
                 <Button
@@ -95,8 +97,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/button_veg"
-                    android:layout_marginTop="50sp"
-                    android:background="@color/button"
+                    android:layout_marginTop="30sp"
+                    android:background="@drawable/rounded_button"
                     android:text="@string/button_fruit" />
 
                 <Button
@@ -104,8 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/button_fruit"
-                    android:layout_marginTop="50sp"
-                    android:background="@color/button"
+                    android:layout_marginTop="30sp"
+                    android:background="@drawable/rounded_button"
                     android:text="@string/button_meat" />
 
                 <Button
@@ -113,8 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/button_meat"
-                    android:layout_marginTop="50sp"
-                    android:background="@color/button"
+                    android:layout_marginTop="30sp"
+                    android:background="@drawable/rounded_button"
                     android:text="@string/button_seafood" />
 
                 <Button
@@ -122,8 +124,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/button_seafood"
-                    android:layout_marginTop="50sp"
-                    android:background="@color/button"
+                    android:layout_marginTop="30sp"
+                    android:background="@drawable/rounded_button"
                     android:text="@string/button_other" />
 
             </RelativeLayout>

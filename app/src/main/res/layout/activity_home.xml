@@ -41,7 +41,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:layout_centerHorizontal="false"
-                android:fontFamily="@font/ARIALNB"
+                android:fontFamily="@font/arialnb"
                 android:text="HOME"
                 android:textColor="@color/background"
                 android:textSize="10pt" />
@@ -68,7 +68,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30sp"
-                    android:background="@drawable/rounded_button">
+                    android:background="@drawable/rounded_button"
+                    android:padding="20sp">
 
                     <TextView
                         android:id="@+id/textView"
@@ -77,15 +78,15 @@
                         android:layout_below="@id/textView3"
                         android:layout_centerInParent="false"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/ARIALNB"
+                        android:fontFamily="@font/arialnb"
                         android:text="@string/button_pantry"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/textView3"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
+                        android:layout_width="75sp"
+                        android:layout_height="75sp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/button_pantry" />
                 </RelativeLayout>
@@ -94,7 +95,8 @@
                     android:id="@+id/buttonFoodPedia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_button">
+                    android:background="@drawable/rounded_button"
+                    android:padding="20sp">
 
                     <TextView
                         android:id="@+id/textView2"
@@ -102,15 +104,15 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textView4"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/ARIALNB"
+                        android:fontFamily="@font/arialnb"
                         android:text="@string/button_foodPedia"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/textView4"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
+                        android:layout_width="75sp"
+                        android:layout_height="75sp"
                         android:layout_centerInParent="false"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/button_foodpedia2" />
@@ -138,7 +140,7 @@
                     android:id="@+id/textnama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ARIALNB"
+                    android:fontFamily="@font/arialnb"
                     android:gravity="center_vertical"
                     android:shadowColor="@color/shadow"
                     android:shadowDx="2"
@@ -152,7 +154,7 @@
                     android:id="@+id/textTagline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ARIALNI"
+                    android:fontFamily="@font/arialni"
                     android:gravity="center_vertical"
                     android:shadowColor="@color/shadow"
                     android:shadowDx="2"

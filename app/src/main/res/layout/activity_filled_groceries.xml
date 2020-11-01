@@ -110,8 +110,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="80sp"
                 android:layout_marginBottom="20sp"
-                android:background="@color/buttonPantry"
-                android:padding="10sp">
+                android:background="@drawable/rounded_button"
+                android:padding="15sp">
 
                 <TextView
                     android:id="@+id/itemName2"
@@ -161,8 +161,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="80sp"
-                android:background="@color/buttonPantry"
-                android:padding="10sp">
+                android:background="@drawable/rounded_button"
+                android:padding="15sp">
 
                 <TextView
                     android:id="@+id/itemName1"
