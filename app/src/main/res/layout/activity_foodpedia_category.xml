@@ -165,8 +165,6 @@
                 android:layout_toRightOf="@id/homeButton"
                 android:background="@drawable/button_foodpedia2" />
 
-
-
             <Button
                 android:id="@+id/homeButton"
                 android:layout_width="50sp"
@@ -176,7 +174,6 @@
 
         </RelativeLayout>
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,8 +25,7 @@ public class StartPage extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //remove call to the super class
-        //super.onBackPressed();
+        //
     }
 
     public void home(){
