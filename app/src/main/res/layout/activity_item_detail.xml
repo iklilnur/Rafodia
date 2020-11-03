@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ItemDetail2">
+    tools:context=".ItemDetail">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
