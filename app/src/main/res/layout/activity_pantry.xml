@@ -83,81 +83,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <RelativeLayout
-                        android:id="@+id/tanggal2"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/groceriesItems"
                         android:layout_width="match_parent"
-                        android:layout_height="80sp"
-                        android:layout_marginBottom="24sp"
-                        android:background="@drawable/rounded_button"
-                        android:padding="12sp">
-
-                        <TextView
-                            android:id="@+id/tanggal2Pantry"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:fontFamily="@font/arialn"
-                            android:text="@string/tanggal2_pantry"
-                            android:textColor="@color/white"
-                            android:textSize="22sp" />
-
-
-                        <TextView
-                            android:id="@+id/qty2Pantry"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignRight="@id/tanggal2Pantry"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentRight="true"
-                            android:fontFamily="@font/arialn"
-                            android:text="@string/qty2_pantry"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/tanggal1"
-                        android:layout_width="match_parent"
-                        android:layout_height="80sp"
-                        android:background="@drawable/rounded_button"
-                        android:padding="12sp">
-
-                        <TextView
-                            android:id="@+id/tanggal1Pantry"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:fontFamily="@font/arialn"
-                            android:text="@string/tanggal1_pantry"
-                            android:textColor="@color/white"
-                            android:textSize="22sp" />
-
-                        <TextView
-                            android:id="@+id/expiredFood"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tanggal1Pantry"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentBottom="true"
-                            android:fontFamily="@font/arialni"
-                            android:text="@string/kadaluarsa"
-                            android:textColor="#FFD740"
-                            android:textStyle="italic" />
-
-                        <TextView
-                            android:id="@+id/qty1Pantry"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignRight="@id/tanggal1Pantry"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentRight="true"
-                            android:fontFamily="@font/arialn"
-                            android:text="@string/qty1_pantry"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-                    </RelativeLayout>
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </ScrollView>
 

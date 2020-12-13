@@ -1,39 +1,48 @@
 package com.example.rutepantry;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-public class Pantry extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
+
+public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemClickListener{
+    AlertDialog.Builder dialog;
+    LayoutInflater inflater;
+    View dialogView;
+    DatePickerDialog dateDialog;
+    SimpleDateFormat dateFormat;
+    ArrayList<ArrayList<String>> groceries_items = new ArrayList<>();
+    RecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
+        dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
         //memasang onclick listener
-        RelativeLayout empty_groceries = (RelativeLayout) findViewById(R.id.tanggal2);
-        RelativeLayout filled_groceries = (RelativeLayout) findViewById(R.id.tanggal1);
         Button home = (Button) findViewById(R.id.homeButton);
         Button back = (Button) findViewById(R.id.backButton);
         Button add_pantry = (Button) findViewById(R.id.addPantry);
 
-        empty_groceries.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                emptyGroceries();
-            }
-        });
-        filled_groceries.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                filledGroceries();
-            }
-        });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +81,7 @@ public class Pantry extends AppCompatActivity {
     }
 
     protected void addPantry(){
-        Intent intent = new Intent(this, InputGroceries.class);
-        startActivity(intent);
+        DateDialog();
     }
 
     protected void back(){
@@ -81,5 +89,56 @@ public class Pantry extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         finish();
         startActivityIfNeeded(intent, 0);
+    }
+
+    private void DateDialog() {
+        Calendar newCalendar = Calendar.getInstance();
+
+        dateDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                /**
+                 * Method ini dipanggil saat kita selesai memilih tanggal di DatePicker
+                 */
+
+                /**
+                 * Set Calendar untuk menampung tanggal yang dipilih
+                 */
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+
+                /**
+                 * Update TextView dengan tanggal yang kita pilih
+                 */
+                ArrayList<String> item = new ArrayList<>();
+                item.add(dateFormat.format(newDate.getTime()));
+                item.add("Qty: 0");
+
+                groceries_items.add(item);
+                // set up the RecyclerView
+                RecyclerView recyclerView = findViewById(R.id.groceriesItems);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
+
+                adapter = new RecyclerAdapter(Pantry.this, groceries_items);
+                adapter.setClickListener(Pantry.this);
+
+                recyclerView.setAdapter(adapter);
+
+                Toast.makeText(Pantry.this, "Tanggal yang dipilih: "+dateFormat.format(newDate.getTime()), Toast.LENGTH_SHORT).show();
+            }
+
+        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        /**
+         * Tampilkan DatePicker dialog
+         */
+        dateDialog.show();
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, "Position: "+position, Toast.LENGTH_SHORT).show();
     }
 }
