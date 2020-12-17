@@ -10,16 +10,16 @@ import android.widget.RelativeLayout;
 
 public class Home extends AppCompatActivity {
 
-    RelativeLayout food_pedia;
-    RelativeLayout pantry_button;
+    Button food_pedia;
+    Button pantry_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.nyoba_guideline);
 
-        food_pedia = (RelativeLayout) findViewById(R.id.buttonFoodPedia);
-        pantry_button = (RelativeLayout) findViewById(R.id.buttonPantry);
+        food_pedia = (Button) findViewById(R.id.buttonFoodPedia);
+        pantry_button = (Button) findViewById(R.id.buttonPantry);
 
         pantry_button.setOnClickListener(new View.OnClickListener(){
             @Override
