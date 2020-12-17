@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,12 +32,27 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
     SimpleDateFormat dateFormat;
     ArrayList<ArrayList<String>> groceries_items = new ArrayList<>();
     RecyclerAdapter adapter;
+    DatabaseHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
         dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+
+        mydb = new DatabaseHelper(getApplicationContext());
+        mydb.createDatabase();
+
+        groceries_items = mydb.getAllGroceries();
+
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.groceriesItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
+
+        adapter = new RecyclerAdapter(Pantry.this, groceries_items);
+        adapter.setClickListener(Pantry.this);
+
+        recyclerView.setAdapter(adapter);
 
         //memasang onclick listener
         Button home = (Button) findViewById(R.id.homeButton);
@@ -112,12 +128,16 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
                 /**
                  * Update TextView dengan tanggal yang kita pilih
                  */
-                ArrayList<String> item = new ArrayList<>();
-                item.add(dateFormat.format(newDate.getTime()));
-                item.add("Qty: 0");
+                //ArrayList<String> item = new ArrayList<>();
+                String date = dateFormat.format(newDate.getTime());
+                Integer qty = 0;
+                if(mydb.insertGroceries(date, qty)){
+                    Toast.makeText(Pantry.this, "Success add data", Toast.LENGTH_SHORT).show();
+                }
 
-                groceries_items.add(item);
+                //groceries_items.add(item);
                 // set up the RecyclerView
+                groceries_items = mydb.getAllGroceries();
                 RecyclerView recyclerView = findViewById(R.id.groceriesItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
 
@@ -126,7 +146,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
 
                 recyclerView.setAdapter(adapter);
 
-                Toast.makeText(Pantry.this, "Tanggal yang dipilih: "+dateFormat.format(newDate.getTime()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Pantry.this, "Tanggal yang dipilih: "+dateFormat.format(newDate.getTime()), Toast.LENGTH_SHORT).show();
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));

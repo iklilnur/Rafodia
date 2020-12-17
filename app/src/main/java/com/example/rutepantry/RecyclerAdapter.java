@@ -37,7 +37,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         List<String> grocery = mData.get(position);
         holder.date.setText(grocery.get(0));
-        holder.quantity.setText(grocery.get(1));
+        holder.quantity.setText("Qty: "+grocery.get(1));
     }
 
     // total number of rows
