@@ -37,8 +37,8 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantry);
-        dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        setContentView(R.layout.activity_pantry_new);
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 
         mydb = new DatabaseHelper(getApplicationContext());
         mydb.createDatabase();
@@ -55,16 +55,16 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         recyclerView.setAdapter(adapter);
 
         //memasang onclick listener
-        Button home = (Button) findViewById(R.id.homeButton);
+        //Button home = (Button) findViewById(R.id.homeButton);
         Button back = (Button) findViewById(R.id.backButton);
         Button add_pantry = (Button) findViewById(R.id.addPantry);
 
-        home.setOnClickListener(new View.OnClickListener() {
+        /*home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 home();
             }
-        });
+        });*/
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,9 +131,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
                 //ArrayList<String> item = new ArrayList<>();
                 String date = dateFormat.format(newDate.getTime());
                 Integer qty = 0;
-                if(mydb.insertGroceries(date, qty)){
-                    Toast.makeText(Pantry.this, "Success add data", Toast.LENGTH_SHORT).show();
-                }
+                mydb.insertGroceries(date, qty);
 
                 //groceries_items.add(item);
                 // set up the RecyclerView
@@ -159,6 +157,9 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "Position: "+position, Toast.LENGTH_SHORT).show();
+        String id_groceries = groceries_items.get(position).get(2);
+        Intent intent = new Intent(this, FilledGroceries.class);
+        intent.putExtra("id_groceries", id_groceries);
+        startActivity(intent);
     }
 }
