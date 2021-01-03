@@ -91,7 +91,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public boolean updateGroceries (Integer id, String date, Integer qty) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tanggal_groceries", date);
+        if(!date.equals("")) {
+            contentValues.put("tanggal_groceries", date);
+        }
         contentValues.put("item_qty", qty);
         db.update("groceries", contentValues, "ID_groceries = ? ", new String[] { Integer.toString(id) } );
         return true;
@@ -142,9 +144,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         contentValues.put(GROCERIES_ITEMS_COLUMN_QTY, qty);
         contentValues.put(GROCERIES_COLUMN_ID, ID_groceries);
         contentValues.put(ITEMS_COLUMN_ID, ID_item);
+        ArrayList<String> curGroceries = new ArrayList<>();
         Cursor res = db.rawQuery( "select * from groceries_item where ID_item LIKE '"+ID_item+"' AND ID_groceries LIKE '"+ID_groceries+"'", null );
         if(res.getCount() == 0){
             db.insert("groceries_item", null, contentValues);
+            curGroceries = this.getGroceriesData(ID_groceries);
+            Integer curGroceriesQty = Integer.parseInt(curGroceries.get(2));
+            curGroceriesQty = curGroceriesQty + 1;
+            this.updateGroceries(ID_groceries, "", curGroceriesQty);
             //Toast.makeText(mContext, "berhasil input groceries item", Toast.LENGTH_SHORT).show();
         }
         else{
@@ -287,6 +294,72 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
         res.close();
         return row;
+    }
+
+    public ArrayList<ArrayList<String>> getItemCategory(String kategori) {
+        ArrayList<ArrayList<String>> array_list = new ArrayList<>();
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor res;
+        try{
+            res = db.rawQuery( "SELECT * FROM item WHERE kategori_item LIKE '%"+kategori+"%' ORDER BY nama_item ASC", null );
+            Log.d("alldata", "Success");
+            if(res == null){
+                return null;
+            }
+            res.moveToFirst();
+            do{
+                ArrayList<String> row = new ArrayList<>();
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_ID)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_NAME)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CATEGORY)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+                array_list.add(row);
+
+            }while(res.moveToNext());
+            res.close();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        //db.close();
+        return array_list;
+    }
+
+    public ArrayList<ArrayList<String>> getItemName(String name) {
+        ArrayList<ArrayList<String>> array_list = new ArrayList<>();
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor res;
+        try{
+            res = db.rawQuery( "SELECT * FROM item WHERE nama_item LIKE '%"+name+"%' ORDER BY nama_item ASC", null );
+            Log.d("alldata", "Success");
+            if(res.getCount() == 0){
+                return null;
+            }
+            res.moveToFirst();
+            do{
+                ArrayList<String> row = new ArrayList<>();
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_ID)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_NAME)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CATEGORY)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+                array_list.add(row);
+
+            }while(res.moveToNext());
+            res.close();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        //db.close();
+        return array_list;
     }
 
     public int itemRowsCount(){

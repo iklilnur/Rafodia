@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class FilledGroceries extends AppCompatActivity implements GroceriesItemRecyclerAdapter.ItemClickListener {
+public class FilledGroceries extends AppCompatActivity implements RecyclerAdapter.ItemClickListener {
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
     View dialogView;
@@ -33,7 +33,7 @@ public class FilledGroceries extends AppCompatActivity implements GroceriesItemR
     ArrayList<ArrayList<String>> items = new ArrayList<>();
     ArrayList<ArrayList<String>> items_for_recycler = new ArrayList<>();
     ArrayList<String> items_name = new ArrayList<>();
-    GroceriesItemRecyclerAdapter adapter;
+    RecyclerAdapter adapter;
     String selectedItem;
     DatabaseHelper mydb;
     Integer id_groceries;
@@ -70,7 +70,7 @@ public class FilledGroceries extends AppCompatActivity implements GroceriesItemR
         RecyclerView recyclerView = findViewById(R.id.groceriesItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(FilledGroceries.this));
 
-        adapter = new GroceriesItemRecyclerAdapter(FilledGroceries.this, items_for_recycler);
+        adapter = new RecyclerAdapter(FilledGroceries.this, items_for_recycler, "groceries");
         adapter.setClickListener(FilledGroceries.this);
 
         recyclerView.setAdapter(adapter);
@@ -201,7 +201,7 @@ public class FilledGroceries extends AppCompatActivity implements GroceriesItemR
                     RecyclerView recyclerView = findViewById(R.id.groceriesItems);
                     recyclerView.setLayoutManager(new LinearLayoutManager(FilledGroceries.this));
 
-                    adapter = new GroceriesItemRecyclerAdapter(FilledGroceries.this, items_for_recycler);
+                    adapter = new RecyclerAdapter(FilledGroceries.this, items_for_recycler, "groceries");
                     adapter.setClickListener(FilledGroceries.this);
 
                     recyclerView.setAdapter(adapter);
