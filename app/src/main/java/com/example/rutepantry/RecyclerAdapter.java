@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,17 +18,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private ArrayList<ArrayList<String>> mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private String type;
 
     // data is passed into the constructor
-    RecyclerAdapter(Context context, ArrayList<ArrayList<String>> data) {
+    RecyclerAdapter(Context context, ArrayList<ArrayList<String>> data, String inputType) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.type = inputType;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.groceries_item, parent, false);
+        View view;
+        if(this.type == "pantry"){
+            view = mInflater.inflate(R.layout.groceries_item, parent, false);
+        }
+        else if(this.type == "category_items"){
+            view = mInflater.inflate(R.layout.category_item, parent, false);
+        }
+        else{
+            view = mInflater.inflate(R.layout.groceries_item, parent, false);
+        }
+
         return new ViewHolder(view);
 
     }
@@ -35,9 +48,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        List<String> grocery = mData.get(position);
-        holder.date.setText(grocery.get(0));
-        holder.quantity.setText("Qty: "+grocery.get(1));
+        List<String> data = mData.get(position);
+        if(this.type == "pantry"){
+            holder.date.setText(data.get(0));
+            holder.quantity.setText("Qty: "+data.get(1));
+        }
+        else if(type == "category_items"){
+            holder.itemName.setText(data.get(1));
+        }
+        else{
+            holder.date.setText(data.get(0));
+            holder.quantity.setText("Qty: "+data.get(1));
+        }
     }
 
     // total number of rows
@@ -49,16 +71,30 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        RelativeLayout relativeLayout;
+        ConstraintLayout constraintLayout;
         TextView date;
         TextView quantity;
+        TextView itemName;
 
         ViewHolder(View itemView) {
             super(itemView);
-            relativeLayout = itemView.findViewById(R.id.grocery);
-            date = itemView.findViewById(R.id.tanggal);
-            quantity = itemView.findViewById(R.id.qty);
-            relativeLayout.setOnClickListener(this);
+            if(type =="pantry"){
+                constraintLayout = itemView.findViewById(R.id.grocery);
+                date = itemView.findViewById(R.id.tanggal);
+                quantity = itemView.findViewById(R.id.qty);
+                constraintLayout.setOnClickListener(this);
+            }
+            else if(type == "category_items"){
+                itemName = itemView.findViewById(R.id.itemName);
+                constraintLayout = itemView.findViewById(R.id.categoryItem);
+                constraintLayout.setOnClickListener(this);
+            }
+            else{
+                constraintLayout = itemView.findViewById(R.id.grocery);
+                date = itemView.findViewById(R.id.tanggal);
+                quantity = itemView.findViewById(R.id.qty);
+                constraintLayout.setOnClickListener(this);
+            }
         }
 
         @Override

@@ -1,41 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="125dp"
     android:orientation="horizontal"
-    android:padding="10dp"
-    android:paddingLeft="10dp"
     android:paddingTop="5dp"
-    android:paddingRight="10dp"
     android:paddingBottom="5dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/grocery"
         android:layout_width="match_parent"
-        android:layout_height="80sp"
-        android:background="@drawable/rounded_button"
-        android:padding="12sp">
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_tanggal_pantry">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
 
         <TextView
             android:id="@+id/tanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:fontFamily="@font/arialn"
             android:textColor="@color/white"
-            android:textSize="22sp" />
-
+            android:textSize="22sp"
+            app:layout_constraintLeft_toLeftOf="@id/vertical1"
+            app:layout_constraintTop_toBottomOf="@id/horizontal1" />
 
         <TextView
             android:id="@+id/qty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/tanggal"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
             android:fontFamily="@font/arialn"
+            android:text="Qty: 0"
             android:textColor="@color/white"
-            android:textSize="14sp" />
-    </RelativeLayout>
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/horizontal3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

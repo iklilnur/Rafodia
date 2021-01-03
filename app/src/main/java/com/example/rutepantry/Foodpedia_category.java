@@ -4,11 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
 
 public class Foodpedia_category extends AppCompatActivity {
 
+    CarouselView carouselView;
+    int[] sampleImages = {R.drawable.btn_buah, R.drawable.btn_sayuran, R.drawable.btn_daging, R.drawable.btn_seafood, R.drawable.btn_lain_lain};
+
+    String kategori;
 
     Button veg_button;
     Button fruit_button;
@@ -21,29 +33,57 @@ public class Foodpedia_category extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foodpedia_category);
+        setContentView(R.layout.activity_foodpedia_new);
 
-        home_button = (Button) findViewById(R.id.homeButton);
+        carouselView = findViewById(R.id.carouselView);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
+        carouselView.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+//                Toast.makeText(Foodpedia_category.this, "Clicked item: "+ position, Toast.LENGTH_SHORT).show();
+                switch(position){
+                    case 0:
+                        kategori = "buah";
+                        break;
+                    case 1:
+                        kategori = "sayuran";
+                        break;
+                    case 2:
+                        kategori = "daging";
+                        break;
+                    case 3:
+                        kategori = "seafood";
+                        break;
+                    case 4:
+                        kategori = "lain-lain";
+                        break;
+                }
+                categoryItem(kategori);
+            }
+        });
+
         back_button = (Button) findViewById(R.id.backButton);
+        /*home_button = (Button) findViewById(R.id.homeButton);
         veg_button = (Button) findViewById(R.id.button_veg);
         fruit_button = (Button) findViewById(R.id.button_fruit);
         meat_button = (Button) findViewById(R.id.button_meat);
         seafood_button = (Button) findViewById(R.id.button_seafood);
-        other_button = (Button) findViewById(R.id.button_other);
+        other_button = (Button) findViewById(R.id.button_other);*/
 
-        home_button.setOnClickListener(new View.OnClickListener() {
+        /*home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 home();
             }
-        });
+        });*/
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 back();
             }
         });
-        veg_button.setOnClickListener(new View.OnClickListener(){
+        /*veg_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 vegetables();
@@ -72,8 +112,16 @@ public class Foodpedia_category extends AppCompatActivity {
             public void onClick(View view) {
                 otherIngredients();
             }
-        });
+        });*/
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+            //imageView.setClickable(true);
+        }
+    };
 
     public void home() {
         Intent intent = new Intent(this, StartPage.class);
@@ -106,6 +154,13 @@ public class Foodpedia_category extends AppCompatActivity {
         Intent intent = new Intent(this, CategoryItem.class);
         startActivity(intent);
     }
+
+    public void categoryItem(String category){
+        Intent intent = new Intent(this, CategoryItem.class);
+        intent.putExtra("kategori", kategori);
+        startActivity(intent);
+    }
+
     protected void back() {
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

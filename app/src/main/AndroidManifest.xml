@@ -22,7 +22,7 @@
         <activity android:name=".InputGroceries" />
         <activity android:name=".FilledGroceries" />
         <activity android:name=".EmptyGroceries" />
-        <activity android:name=".CategoryItem" />
+        <activity android:name=".CategoryItem" android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".ItemDetail" />
         <activity android:name=".ItemDetail2" />
         <activity android:name=".ItemDetail3" />

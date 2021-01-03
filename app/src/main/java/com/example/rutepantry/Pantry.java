@@ -49,7 +49,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         RecyclerView recyclerView = findViewById(R.id.groceriesItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
 
-        adapter = new RecyclerAdapter(Pantry.this, groceries_items);
+        adapter = new RecyclerAdapter(Pantry.this, groceries_items, "pantry");
         adapter.setClickListener(Pantry.this);
 
         recyclerView.setAdapter(adapter);
@@ -139,7 +139,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
                 RecyclerView recyclerView = findViewById(R.id.groceriesItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
 
-                adapter = new RecyclerAdapter(Pantry.this, groceries_items);
+                adapter = new RecyclerAdapter(Pantry.this, groceries_items, "pantry");
                 adapter.setClickListener(Pantry.this);
 
                 recyclerView.setAdapter(adapter);

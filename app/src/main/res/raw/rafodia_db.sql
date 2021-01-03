@@ -26,5 +26,5 @@ CREATE TABLE IF NOT EXISTS "groceries_item" (
 	FOREIGN KEY("ID_item") REFERENCES "item"("ID_item"),
 	PRIMARY KEY("ID_groceries_item" AUTOINCREMENT)
 );
-INSERT INTO "item" VALUES (1,'wortel','SAYUR','Pilih Wortel yang segar, rendam dengan air dingin, bungkus dengan plastik, simpan dalam frezeer','wortel yang segar ditandai dengan permukaan yang halus dan tekstur yang tidak lembek',10);
+INSERT INTO "item" VALUES (1,'wortel','sayuran','Pilih Wortel yang segar, rendam dengan air dingin, bungkus dengan plastik, simpan dalam frezeer','wortel yang segar ditandai dengan permukaan yang halus dan tekstur yang tidak lembek',10);
 COMMIT;

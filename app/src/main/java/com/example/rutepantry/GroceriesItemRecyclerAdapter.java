@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -48,16 +49,16 @@ public class GroceriesItemRecyclerAdapter extends RecyclerView.Adapter<Groceries
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        RelativeLayout relativeLayout;
+        ConstraintLayout constraintLayout;
         TextView date;
         TextView quantity;
 
         ViewHolder(View itemView) {
             super(itemView);
-            relativeLayout = itemView.findViewById(R.id.grocery);
+            constraintLayout = itemView.findViewById(R.id.grocery);
             date = itemView.findViewById(R.id.tanggal);
             quantity = itemView.findViewById(R.id.qty);
-            relativeLayout.setOnClickListener(this);
+            constraintLayout.setOnClickListener(this);
         }
 
         @Override
