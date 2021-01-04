@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,11 +23,13 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
     String inputKategori;
     EditText search;
     Boolean resultEmpty = false;
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_item_new);
+
 
         mydb = new DatabaseHelper(getApplicationContext());
         mydb.createDatabase();
@@ -50,6 +53,9 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
         });
 
         inputKategori = getIntent().getStringExtra("kategori");
+
+        title = findViewById(R.id.title);
+        title.setText(inputKategori.toUpperCase());
 
         category_items = mydb.getItemCategory(inputKategori);
 
@@ -146,7 +152,10 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
     @Override
     public void onItemClick(View view, int position) {
         if(resultEmpty == false){
-            Toast.makeText(this, "Position: "+position, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ItemDetail.class);
+            intent.putExtra("id", category_items.get(position).get(0));
+            intent.putExtra("kategori", inputKategori);
+            startActivity(intent);
         }
     }
 
@@ -164,7 +173,7 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
             recyclerView.setAdapter(adapter);
         }
         else{
-            category_items = mydb.getItemName(res);
+            category_items = mydb.getItemName(res, inputKategori);
 
             if(category_items != null){
                 //Toast.makeText(this, category_items.get(0).get(1), Toast.LENGTH_SHORT).show();
@@ -180,11 +189,11 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
             else{
                 resultEmpty = true;
                 //Toast.makeText(this, "Item tidak ditemukan", Toast.LENGTH_SHORT).show();
-                ArrayList<String> kosong = new ArrayList<>();
-                kosong.add("");
-                kosong.add("Bahan tidak ditemukan.");
-                category_items = new ArrayList<>();
-                category_items.add(kosong);
+//                ArrayList<String> kosong = new ArrayList<>();
+//                kosong.add("");
+//                kosong.add("Bahan tidak ditemukan.");
+//                category_items = new ArrayList<>();
+//                category_items.add(kosong);
 
                 RecyclerView recyclerView = findViewById(R.id.categoryItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(CategoryItem.this));

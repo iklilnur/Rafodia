@@ -35,6 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String ITEMS_COLUMN_CARA_PENYIMPANAN = "cara_penyimpanan";
     public static final String ITEMS_COLUMN_TINGKAT_KESEGARAN = "tingkat_kesegaran";
     public static final String ITEMS_COLUMN_WAKTU_KADALUARSA = "waktu_kadaluarsa";
+    public static final String ITEMS_COLUMN_SATUAN = "satuan";
     private static final int DB_VERSION = 1;
 
     private SQLiteDatabase mDataBase;
@@ -180,20 +181,33 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return numRows;
     }
 
-    public boolean updateGroceriesItem (Integer id, String date, Integer qty) {
+    public boolean updateGroceriesItem (Integer id, Integer qty) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tanggal_groceries", date);
-        contentValues.put("item_qty", qty);
-        db.update("groceries_item", contentValues, "ID_groceries = ? ", new String[] { Integer.toString(id) } );
+        contentValues.put("groceries_item_qty", qty);
+        db.update("groceries_item", contentValues, "ID_groceries_item = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
 
     public Integer deleteGroceriesItem (Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("groceries_item",
-                "ID_groceries = ? ",
-                new String[] { Integer.toString(id) });
+        Cursor res = db.rawQuery( "select * from groceries_item where ID_groceries_item LIKE '"+id+"'", null );
+        ArrayList<String> curGroceries = new ArrayList<>();
+        if(res.getCount() != 0){
+            res.moveToFirst();
+            Integer groceriesID = Integer.parseInt(res.getString(res.getColumnIndex(GROCERIES_COLUMN_ID)));
+            curGroceries = this.getGroceriesData(groceriesID);
+            Integer curGroceriesQty = Integer.parseInt(curGroceries.get(2));
+            curGroceriesQty = curGroceriesQty - 1;
+            this.updateGroceries(groceriesID, "", curGroceriesQty);
+            //Toast.makeText(mContext, "berhasil input groceries item", Toast.LENGTH_SHORT).show();
+            return db.delete("groceries_item",
+                    "ID_groceries_item = ? ",
+                    new String[] { Integer.toString(id) });
+        }
+        else{
+            return null;
+        }
     }
 
     public ArrayList<ArrayList<String>> getGroceriesItems(Integer groceriesID) {
@@ -250,6 +264,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_SATUAN)));
                 array_list.add(row);
 
             }while(res.moveToNext());
@@ -292,6 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
         row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
         row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+        row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_SATUAN)));
         res.close();
         return row;
     }
@@ -317,6 +333,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_SATUAN)));
                 array_list.add(row);
 
             }while(res.moveToNext());
@@ -329,14 +346,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return array_list;
     }
 
-    public ArrayList<ArrayList<String>> getItemName(String name) {
+    public ArrayList<ArrayList<String>> getItemName(String name, String kategori) {
         ArrayList<ArrayList<String>> array_list = new ArrayList<>();
         //hp = new HashMap();
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor res;
         try{
-            res = db.rawQuery( "SELECT * FROM item WHERE nama_item LIKE '%"+name+"%' ORDER BY nama_item ASC", null );
+            res = db.rawQuery( "SELECT * FROM item WHERE nama_item LIKE '%"+name+"%' AND WHERE kategori_item LIKE '%"+kategori+"%' ORDER BY nama_item ASC", null );
             Log.d("alldata", "Success");
             if(res.getCount() == 0){
                 return null;
@@ -350,6 +367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_CARA_PENYIMPANAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_TINGKAT_KESEGARAN)));
                 row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_WAKTU_KADALUARSA)));
+                row.add(res.getString(res.getColumnIndex(ITEMS_COLUMN_SATUAN)));
                 array_list.add(row);
 
             }while(res.moveToNext());

@@ -159,6 +159,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
     public void onItemClick(View view, int position) {
         String id_groceries = groceries_items.get(position).get(2);
         Intent intent = new Intent(this, FilledGroceries.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         intent.putExtra("id_groceries", id_groceries);
         startActivity(intent);
     }

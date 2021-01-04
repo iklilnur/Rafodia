@@ -130,33 +130,34 @@ public class Foodpedia_category extends AppCompatActivity {
         startActivityIfNeeded(intent, 0);
     }
 
-    public void otherIngredients() {
-        Intent intent = new Intent(this, CategoryItem.class);
-        startActivity(intent);
-    }
-
-    public void seafood() {
-        Intent intent = new Intent(this, CategoryItem.class);
-        startActivity(intent);
-    }
-
-    public void meat() {
-        Intent intent = new Intent(this, CategoryItem.class);
-        startActivity(intent);
-    }
-
-    public void fruit() {
-        Intent intent = new Intent(this, CategoryItem.class);
-        startActivity(intent);
-    }
-
-    public void vegetables() {
-        Intent intent = new Intent(this, CategoryItem.class);
-        startActivity(intent);
-    }
+//    public void otherIngredients() {
+//        Intent intent = new Intent(this, CategoryItem.class);
+//        startActivity(intent);
+//    }
+//
+//    public void seafood() {
+//        Intent intent = new Intent(this, CategoryItem.class);
+//        startActivity(intent);
+//    }
+//
+//    public void meat() {
+//        Intent intent = new Intent(this, CategoryItem.class);
+//        startActivity(intent);
+//    }
+//
+//    public void fruit() {
+//        Intent intent = new Intent(this, CategoryItem.class);
+//        startActivity(intent);
+//    }
+//
+//    public void vegetables() {
+//        Intent intent = new Intent(this, CategoryItem.class);
+//        startActivity(intent);
+//    }
 
     public void categoryItem(String category){
         Intent intent = new Intent(this, CategoryItem.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         intent.putExtra("kategori", kategori);
         startActivity(intent);
     }
