@@ -9,6 +9,7 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,6 +38,10 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
     String selectedItem;
     DatabaseHelper mydb;
     Integer id_groceries;
+    TextView satuan;
+    Button ubah, hapus;
+    TextView penyimpanan, kesegaran, kadaluarsa, jumlahTitle;
+    EditText jumlah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         //mengambil intent
         id_groceries = Integer.parseInt(getIntent().getStringExtra("id_groceries"));
 
+
         mydb = new DatabaseHelper(getApplicationContext());
         mydb.createDatabase();
 
@@ -53,27 +59,7 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         TextView groceries_date = (TextView) findViewById(R.id.date);
         groceries_date.setText(groceries.get(1));
 
-        groceries_items = mydb.getGroceriesItems(id_groceries);
-
-        for(int i = 0;i<groceries_items.size(); i++){
-            ArrayList<String> item = new ArrayList<>();
-            item = mydb.getItemData(Integer.parseInt(groceries_items.get(i).get(3)));
-
-            ArrayList<String> recycler_item = new ArrayList<>();
-            recycler_item.add(item.get(1));
-            recycler_item.add(groceries_items.get(i).get(1));
-
-            items_for_recycler.add(recycler_item);
-        }
-
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.groceriesItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(FilledGroceries.this));
-
-        adapter = new RecyclerAdapter(FilledGroceries.this, items_for_recycler, "groceries");
-        adapter.setClickListener(FilledGroceries.this);
-
-        recyclerView.setAdapter(adapter);
+        setRecyclerView();
 
         items = mydb.getAllItems();
 
@@ -137,10 +123,81 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         InputDialog();
     }
 
+    private void detailDialog(Integer position) {
+        dialog = new AlertDialog.Builder(FilledGroceries.this);
+        final Integer pos = position;
+        inflater = getLayoutInflater();
+        dialogView = inflater.inflate(R.layout.detail_item, null);
+        dialog.setView(dialogView);
+        dialog.setCancelable(true);
+
+        ArrayList<String> item = new ArrayList<>();
+        item = mydb.getItemData(Integer.parseInt(groceries_items.get(position).get(3)));
+
+        jumlahTitle = dialogView.findViewById(R.id.sTitle2);
+        jumlahTitle.setText("Jumlah (Satuan "+item.get(6)+")");
+
+        penyimpanan = dialogView.findViewById(R.id.caraPenyimpanan2);
+        penyimpanan.setText(item.get(3));
+
+        kesegaran = dialogView.findViewById(R.id.tingkatKesegaran2);
+        kesegaran.setText(item.get(4));
+
+        kadaluarsa = dialogView.findViewById(R.id.waktuKadaluarsa2);
+
+        jumlah = dialogView.findViewById(R.id.jumlah2);
+        jumlah.setEnabled(false);
+        //jumlah.setInputType(InputType.TYPE_NULL);
+        jumlah.setFocusable(false);
+        jumlah.setText(items_for_recycler.get(position).get(1));
+
+        ubah = dialogView.findViewById(R.id.edit);
+        ubah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ubah.getText().toString().equals("ubah")){
+                    ubah.setText("simpan");
+                    jumlah.setEnabled(true);
+                    jumlah.setFocusableInTouchMode(true);
+                    //jumlah.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+                else{
+                    ubah.setText("ubah");
+                    mydb.updateGroceriesItem(Integer.parseInt(groceries_items.get(pos).get(0)), Integer.parseInt(jumlah.getText().toString()));
+                    jumlah.setEnabled(false);
+                   //jumlah.setInputType(InputType.TYPE_NULL);
+                    jumlah.setFocusable(false);
+                    setRecyclerView();
+                }
+            }
+        });
+
+        hapus = dialogView.findViewById(R.id.delete);
+        hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mydb.deleteGroceriesItem(Integer.parseInt(groceries_items.get(pos).get(0)));
+                setRecyclerView();
+            }
+        });
+
+        dialog.setNegativeButton("TUTUP", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
     private void InputDialog() {
         dialog = new AlertDialog.Builder(FilledGroceries.this);
         inflater = getLayoutInflater();
         dialogView = inflater.inflate(R.layout.form_input_item, null);
+
+        satuan = dialogView.findViewById(R.id.satuanInput);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
 
@@ -152,6 +209,10 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 selectedItem = items.get(position).get(0);
+
+                if(items.get(position).get(6).equals("kg")){
+                    satuan.setText("Kg");
+                }
             }
 
             @Override
@@ -183,28 +244,7 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
 
                     mydb.insertGroceriesItem(qty, id_g, id_i);
 
-                    groceries_items = mydb.getGroceriesItems(id_groceries);
-                    items_for_recycler = new ArrayList<>();
-
-                    for(int i = 0;i<groceries_items.size(); i++){
-                        ArrayList<String> item = new ArrayList<>();
-                        item = mydb.getItemData(Integer.parseInt(groceries_items.get(i).get(3)));
-
-                        ArrayList<String> recycler_item = new ArrayList<>();
-                        recycler_item.add(item.get(1));
-                        recycler_item.add(groceries_items.get(i).get(1));
-
-                        items_for_recycler.add(recycler_item);
-                    }
-
-                    // set up the RecyclerView
-                    RecyclerView recyclerView = findViewById(R.id.groceriesItems);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(FilledGroceries.this));
-
-                    adapter = new RecyclerAdapter(FilledGroceries.this, items_for_recycler, "groceries");
-                    adapter.setClickListener(FilledGroceries.this);
-
-                    recyclerView.setAdapter(adapter);
+                    setRecyclerView();
 
                     dialog.dismiss();
                 }
@@ -220,11 +260,35 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         });
 
         dialog.show();
-
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "Position: "+position, Toast.LENGTH_SHORT).show();
+        this.detailDialog(position);
+    }
+
+    private void setRecyclerView(){
+        groceries_items = mydb.getGroceriesItems(id_groceries);
+        items_for_recycler = new ArrayList<>();
+
+        for(int i = 0;i<groceries_items.size(); i++){
+            ArrayList<String> item = new ArrayList<>();
+            item = mydb.getItemData(Integer.parseInt(groceries_items.get(i).get(3)));
+
+            ArrayList<String> recycler_item = new ArrayList<>();
+            recycler_item.add(item.get(1));
+            recycler_item.add(groceries_items.get(i).get(1));
+
+            items_for_recycler.add(recycler_item);
+        }
+
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.groceriesItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(FilledGroceries.this));
+
+        adapter = new RecyclerAdapter(FilledGroceries.this, items_for_recycler, "groceries");
+        adapter.setClickListener(FilledGroceries.this);
+
+        recyclerView.setAdapter(adapter);
     }
 }
