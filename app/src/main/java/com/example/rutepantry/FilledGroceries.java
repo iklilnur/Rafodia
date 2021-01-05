@@ -2,12 +2,20 @@ package com.example.rutepantry;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -21,9 +29,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class FilledGroceries extends AppCompatActivity implements RecyclerAdapter.ItemClickListener {
     AlertDialog.Builder dialog;
@@ -47,6 +58,10 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groceries_new);
+
+        createNotificationChannel();
+
+        addNotification();
 
         //mengambil intent
         id_groceries = Integer.parseInt(getIntent().getStringExtra("id_groceries"));
@@ -270,14 +285,41 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
     private void setRecyclerView(){
         groceries_items = mydb.getGroceriesItems(id_groceries);
         items_for_recycler = new ArrayList<>();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String stringDate = groceries.get(1);
+        Date curDate = Calendar.getInstance().getTime();
+        Date gDate = Calendar.getInstance().getTime();
+        try {
+            gDate = format.parse(stringDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long diff = gDate.getTime() - curDate.getTime();
+        int intDiff = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 
         for(int i = 0;i<groceries_items.size(); i++){
             ArrayList<String> item = new ArrayList<>();
             item = mydb.getItemData(Integer.parseInt(groceries_items.get(i).get(3)));
+            int itemExpire = Integer.parseInt(item.get(5));
+            int expire = itemExpire + intDiff;
+            String sExpire = "";
+
+            if(expire < 0){
+                sExpire = "Kadaluarsa "+(expire*-1)+" hari yang lalu.";
+            }
+            else if(expire == 0){
+                sExpire = "Kadaluarsa pada hari ini.";
+            }
+            else {
+                sExpire = "Kadaluarsa dalam "+expire+" hari.";
+            }
 
             ArrayList<String> recycler_item = new ArrayList<>();
             recycler_item.add(item.get(1));
             recycler_item.add(groceries_items.get(i).get(1));
+            recycler_item.add(sExpire);
+
 
             items_for_recycler.add(recycler_item);
         }
@@ -290,5 +332,40 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         adapter.setClickListener(FilledGroceries.this);
 
         recyclerView.setAdapter(adapter);
+    }
+
+    private void addNotification() {
+        Intent intent = new Intent(this, FilledGroceries.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "kadaluarsaRafodia")
+                .setSmallIcon(R.drawable.logo_depan)
+                .setContentTitle("Notifikasi")
+                .setContentText("Halo pengguna Rafodia!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        // notificationId is a unique int for each notification that you must define
+        notificationManager.notify(1, builder.build());
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "peringatanKadaluarsa";
+            String description = "muncul ketika terdapat item yang akan kadaluarsa";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("kadaluarsaRafodia", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }

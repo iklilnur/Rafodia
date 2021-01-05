@@ -79,11 +79,6 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         });
     }
 
-    protected void emptyGroceries(){
-        Intent intent = new Intent(this, EmptyGroceries.class);
-        startActivity(intent);
-    }
-
     protected void filledGroceries(){
         Intent intent = new Intent(this, FilledGroceries.class);
         startActivity(intent);

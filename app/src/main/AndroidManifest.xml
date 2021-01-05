@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/logo_depan"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Foodpedia_category"/>
+        <activity android:name=".Foodpedia_category" />
         <activity android:name=".Home" />
         <activity android:name=".StartPage">
             <intent-filter>
@@ -18,16 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InputItem" />
-        <activity android:name=".InputGroceries" />
         <activity android:name=".FilledGroceries" />
-        <activity android:name=".EmptyGroceries" />
-        <activity android:name=".CategoryItem" android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".CategoryItem"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".ItemDetail" />
-        <activity android:name=".ItemDetail2" />
-        <activity android:name=".ItemDetail3" />
-        <activity android:name=".Pantry"/>
-
+        <activity android:name=".Pantry" />
     </application>
 
 </manifest>
