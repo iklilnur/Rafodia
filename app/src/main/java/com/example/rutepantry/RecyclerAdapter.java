@@ -59,6 +59,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         else{
             holder.date.setText(data.get(0));
             holder.quantity.setText("Qty: "+data.get(1));
+            holder.kadaluarsa.setText(data.get(2));
+
         }
     }
 
@@ -75,6 +77,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         TextView date;
         TextView quantity;
         TextView itemName;
+        TextView kadaluarsa;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -93,6 +96,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 constraintLayout = itemView.findViewById(R.id.grocery);
                 date = itemView.findViewById(R.id.tanggal);
                 quantity = itemView.findViewById(R.id.qty);
+                kadaluarsa = itemView.findViewById(R.id.kadaluarsa);
                 constraintLayout.setOnClickListener(this);
             }
         }
