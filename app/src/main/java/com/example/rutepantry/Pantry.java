@@ -47,16 +47,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         mydb = new DatabaseHelper(getApplicationContext());
         mydb.createDatabase();
 
-        groceries_items = sortDate(mydb.getAllGroceries());
-
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.groceriesItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
-
-        adapter = new RecyclerAdapter(Pantry.this, groceries_items, "pantry");
-        adapter.setClickListener(Pantry.this);
-
-        recyclerView.setAdapter(adapter);
+        setRecyclerView();
 
         //memasang onclick listener
         //Button home = (Button) findViewById(R.id.homeButton);
@@ -134,14 +125,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
 
                 //groceries_items.add(item);
                 // set up the RecyclerView
-                groceries_items = sortDate(mydb.getAllGroceries());
-                RecyclerView recyclerView = findViewById(R.id.groceriesItems);
-                recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
-
-                adapter = new RecyclerAdapter(Pantry.this, groceries_items, "pantry");
-                adapter.setClickListener(Pantry.this);
-
-                recyclerView.setAdapter(adapter);
+                setRecyclerView();
 
                 //Toast.makeText(Pantry.this, "Tanggal yang dipilih: "+dateFormat.format(newDate.getTime()), Toast.LENGTH_SHORT).show();
             }
@@ -152,6 +136,19 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
          * Tampilkan DatePicker dialog
          */
         dateDialog.show();
+    }
+
+    public void setRecyclerView(){
+        groceries_items = sortDate(mydb.getAllGroceries());
+
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.groceriesItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
+
+        adapter = new RecyclerAdapter(Pantry.this, groceries_items, "pantry");
+        adapter.setClickListener(Pantry.this);
+
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
