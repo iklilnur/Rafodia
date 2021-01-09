@@ -1,6 +1,7 @@
 package com.example.rutepantry;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             view = mInflater.inflate(R.layout.category_item, parent, false);
         }
         else{
-            view = mInflater.inflate(R.layout.groceries_item, parent, false);
+            view = mInflater.inflate(R.layout.button_item, parent, false);
         }
 
         return new ViewHolder(view);
@@ -48,6 +49,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Resources res = holder.itemView.getContext().getResources();
         List<String> data = mData.get(position);
         if(this.type == "pantry"){
             holder.date.setText(data.get(0));
@@ -57,10 +59,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             holder.itemName.setText(data.get(1));
         }
         else{
-            holder.date.setText(data.get(0));
-            holder.quantity.setText("Qty: "+data.get(1));
+            holder.itemName.setText(data.get(0));
+            holder.quantity.setText("Qty="+data.get(1));
             holder.kadaluarsa.setText(data.get(2));
-
+            String image_name = data.get(0).toLowerCase().replace(" ","_")+"_button";
+            int resID = res.getIdentifier(image_name, "drawable", "com.example.rutepantry");
+            if(resID==0){
+                resID = res.getIdentifier("kentang_button", "drawable", "com.example.rutepantry");
+            }
+            holder.constraintLayout.setBackgroundResource(resID);
         }
     }
 
@@ -93,8 +100,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 constraintLayout.setOnClickListener(this);
             }
             else{
-                constraintLayout = itemView.findViewById(R.id.grocery);
-                date = itemView.findViewById(R.id.tanggal);
+                constraintLayout = itemView.findViewById(R.id.buttonItem);
+                itemName = itemView.findViewById(R.id.title);
                 quantity = itemView.findViewById(R.id.qty);
                 kadaluarsa = itemView.findViewById(R.id.kadaluarsa);
                 constraintLayout.setOnClickListener(this);

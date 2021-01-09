@@ -19,9 +19,13 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.Locale;
 
 public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemClickListener{
@@ -43,7 +47,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         mydb = new DatabaseHelper(getApplicationContext());
         mydb.createDatabase();
 
-        groceries_items = mydb.getAllGroceries();
+        groceries_items = sortDate(mydb.getAllGroceries());
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.groceriesItems);
@@ -130,7 +134,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
 
                 //groceries_items.add(item);
                 // set up the RecyclerView
-                groceries_items = mydb.getAllGroceries();
+                groceries_items = sortDate(mydb.getAllGroceries());
                 RecyclerView recyclerView = findViewById(R.id.groceriesItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Pantry.this));
 
@@ -158,4 +162,32 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         intent.putExtra("id_groceries", id_groceries);
         startActivity(intent);
     }
+
+    private ArrayList<ArrayList<String>> sortDate(ArrayList<ArrayList<String>> date){
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+        for(int i=0; i<date.size()-1; i++){
+            for(int j=i; j<date.size()-1; j++){
+
+                try {
+                    Date curDate = format.parse(date.get(i).get(0));
+                    Date nextDate = format.parse(date.get(j+1).get(0));
+                    ArrayList<String> temp;
+
+                    if(nextDate.getTime() > curDate.getTime()){
+                        temp = date.get(i);
+                        date.set(i,date.get(j+1));
+                        date.set(j+1, temp);
+                    }
+                }
+                catch(ParseException pe){
+                    pe.printStackTrace();
+                }
+            }
+        }
+
+
+        return date;
+    }
+
 }
