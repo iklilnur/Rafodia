@@ -99,8 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.207"
-        app:layout_constraintTop_toTopOf="horizontal13" />
+        app:layout_constraintGuide_percent="0.207" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical11"
@@ -114,8 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.907"
-        app:layout_constraintTop_toTopOf="horizontal13" />
+        app:layout_constraintGuide_percent="0.907" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
