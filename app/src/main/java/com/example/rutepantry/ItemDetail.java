@@ -39,7 +39,7 @@ public class ItemDetail extends AppCompatActivity {
         item_image = findViewById(R.id.itemImage);
 
 
-        String image_name = item.get(1).toLowerCase().replace(" ","_")+"_item_detail";
+        String image_name = item.get(1).toLowerCase().replace(" ","tambah")+"_item_detail";
         int resID = getResources().getIdentifier(image_name, "drawable", "com.example.rutepantry");
 
         item_image.setImageResource(resID);

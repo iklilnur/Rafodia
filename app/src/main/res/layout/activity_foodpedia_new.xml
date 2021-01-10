@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/foodpedia">
+
+    <Button
+        android:id="@+id/addPantry3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/foopedia_tengah_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal11"
+        app:layout_constraintLeft_toRightOf="@id/vertical9"
+        app:layout_constraintRight_toLeftOf="@id/vertical8"
+        app:layout_constraintTop_toBottomOf="@id/horizontal10" />
+
+    <Button
+        android:id="@+id/addPantry4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/home_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal13"
+        app:layout_constraintLeft_toRightOf="@id/vertical3"
+        app:layout_constraintRight_toLeftOf="@id/vertical10"
+        app:layout_constraintTop_toBottomOf="@id/horizontal12" />
+
+    <Button
+        android:id="@+id/addPantry5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pantry_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal13"
+        app:layout_constraintLeft_toRightOf="@id/vertical11"
+        app:layout_constraintRight_toLeftOf="@id/vertical12"
+        app:layout_constraintTop_toBottomOf="@id/horizontal12" />
 
     <Button
         android:id="@+id/backButton"
@@ -41,7 +78,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.575" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.21"
+        app:layout_constraintTop_toTopOf="horizontal13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"
+        app:layout_constraintTop_toTopOf="horizontal13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
@@ -72,6 +146,34 @@
         android:paddingBottom="50dp"
         app:layout_constraintGuide_percent="0.75" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="0dp"
@@ -86,4 +188,5 @@
         app:slideInterval="3000"
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
