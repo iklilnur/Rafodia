@@ -6,6 +6,114 @@
     android:layout_height="match_parent"
     android:background="@drawable/pantry1_">
 
+    <Button
+        android:id="@+id/pantry_pantry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pantry_tengah_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal21"
+        app:layout_constraintLeft_toRightOf="@id/vertical22"
+        app:layout_constraintRight_toLeftOf="@id/vertical23"
+        app:layout_constraintTop_toBottomOf="@id/horizontal20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.575" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <Button
+        android:id="@+id/home_pantry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/home_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal26"
+        app:layout_constraintLeft_toRightOf="@id/vertical31"
+        app:layout_constraintRight_toLeftOf="@id/vertical24"
+        app:layout_constraintTop_toBottomOf="@id/horizontal27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.207"
+        app:layout_constraintTop_toTopOf="horizontal13" />
+
+    <Button
+        android:id="@+id/foodped_pantry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/foodpedia_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal26"
+        app:layout_constraintLeft_toRightOf="@id/vertical32"
+        app:layout_constraintRight_toLeftOf="@id/vertical34"
+        app:layout_constraintTop_toBottomOf="@id/horizontal27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.907"
+        app:layout_constraintTop_toTopOf="horizontal13" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
         android:layout_width="wrap_content"
@@ -33,34 +141,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical1"
@@ -116,19 +196,6 @@
                 android:layout_height="match_parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/addPantry"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/tambah"
-        android:text="+"
-        android:textColor="@color/background"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@id/horizontal6"
-        app:layout_constraintLeft_toRightOf="@id/vertical4"
-        app:layout_constraintRight_toLeftOf="@id/vertical5"
-        app:layout_constraintTop_toBottomOf="@id/horizontal5" />
 
     <Button
         android:id="@+id/backButton"
