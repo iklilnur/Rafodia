@@ -5,6 +5,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/groceries">
 
+    <Button
+        android:id="@+id/addPantry2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tambah"
+        android:text="+"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal9"
+        app:layout_constraintLeft_toRightOf="@id/vertical7"
+        app:layout_constraintRight_toLeftOf="@id/vertical6"
+        app:layout_constraintTop_toBottomOf="@id/horizontal8" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical1"
         android:layout_width="wrap_content"
@@ -32,6 +45,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
@@ -81,6 +108,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.205" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
 
     <ScrollView
         android:layout_width="0dp"
