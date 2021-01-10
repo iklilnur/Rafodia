@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 
 public class Home extends AppCompatActivity {
 
@@ -16,7 +15,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nyoba_guideline);
+        setContentView(R.layout.activity_home);
 
         food_pedia = (Button) findViewById(R.id.buttonFoodPedia);
         pantry_button = (Button) findViewById(R.id.buttonPantry);

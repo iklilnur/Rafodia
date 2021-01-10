@@ -4,169 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    android:background="@drawable/home2">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.26" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <Button
+        android:id="@+id/buttonPantry"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:padding="0sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
-        <RelativeLayout
-            android:id="@+id/groceriesHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#389393"
-            android:paddingLeft="20sp"
-            android:paddingTop="10sp"
-            android:paddingRight="20sp"
-            android:paddingBottom="10sp" >
-
-            <Button
-                android:id="@+id/logoheader_home"
-                android:layout_width="40sp"
-                android:layout_height="50sp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/mix_2" />
-
-            <TextView
-                android:id="@+id/home_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="false"
-                android:fontFamily="@font/arialnb"
-                android:text="HOME"
-                android:textColor="@color/background"
-                android:textSize="10pt" />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:background="@color/background"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="20sp">
-
-                <RelativeLayout
-                    android:id="@+id/buttonPantry"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30sp"
-                    android:background="@drawable/rounded_button"
-                    android:padding="20sp">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/textView3"
-                        android:layout_centerInParent="false"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/arialnb"
-                        android:text="@string/button_pantry"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="75sp"
-                        android:layout_height="75sp"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/button_pantry" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/buttonFoodPedia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_button"
-                    android:padding="20sp">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/textView4"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/arialnb"
-                        android:text="@string/button_foodPedia"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="75sp"
-                        android:layout_height="75sp"
-                        android:layout_centerInParent="false"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/button_foodpedia2" />
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:id="@+id/groceriesFooter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f5a25d"
-            android:paddingLeft="20sp"
-            android:paddingTop="10sp"
-            android:paddingRight="20sp"
-            android:paddingBottom="10sp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textnama"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/arialnb"
-                    android:gravity="center_vertical"
-                    android:shadowColor="@color/shadow"
-                    android:shadowDx="2"
-                    android:shadowDy="2"
-                    android:shadowRadius="5"
-                    android:text="@string/textnama"
-                    android:textColor="@color/background"
-                    android:textSize="10pt" />
-
-                <TextView
-                    android:id="@+id/textTagline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/arialni"
-                    android:gravity="center_vertical"
-                    android:shadowColor="@color/shadow"
-                    android:shadowDx="2"
-                    android:shadowDy="2"
-                    android:shadowRadius="5"
-                    android:text="@string/textTagline"
-                    android:textColor="@color/background" />
-
-
-            </LinearLayout>
-
-        </RelativeLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/buttonFoodPedia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/guideline6"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toLeftOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/guideline4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
