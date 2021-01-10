@@ -64,19 +64,33 @@ public class Foodpedia_category extends AppCompatActivity {
         });
 
         back_button = (Button) findViewById(R.id.backButton);
-        /*home_button = (Button) findViewById(R.id.homeButton);
-        veg_button = (Button) findViewById(R.id.button_veg);
+        Button home_foodpedia = (Button) findViewById(R.id.home_foodpedia);
+        Button pantry_foodpedia = (Button) findViewById(R.id.pantry_foodpedia);
+        Button foodped_foodpedia = (Button) findViewById(R.id.foodped_foodpedia);
+        /*veg_button = (Button) findViewById(R.id.button_veg);
         fruit_button = (Button) findViewById(R.id.button_fruit);
         meat_button = (Button) findViewById(R.id.button_meat);
         seafood_button = (Button) findViewById(R.id.button_seafood);
         other_button = (Button) findViewById(R.id.button_other);*/
 
-        /*home_button.setOnClickListener(new View.OnClickListener() {
+        home_foodpedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                home();
+                homeFoodpedia();
             }
-        });*/
+        });
+        pantry_foodpedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pantryFoodpedia();
+            }
+        });
+        foodped_foodpedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                foodpedFoodpedia();
+            }
+        });
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,6 +127,21 @@ public class Foodpedia_category extends AppCompatActivity {
                 otherIngredients();
             }
         });*/
+    }
+
+    private void foodpedFoodpedia() {
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        startActivity(intent);
+    }
+
+    private void pantryFoodpedia() {
+        Intent intent = new Intent(this, Pantry.class);
+        startActivity(intent);
+    }
+
+    private void homeFoodpedia() {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 
     ImageListener imageListener = new ImageListener() {

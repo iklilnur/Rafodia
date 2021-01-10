@@ -70,6 +70,9 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
         //Button home = (Button) findViewById(R.id.homeButton);
 
         Button back_button = (Button) findViewById(R.id.backButton);
+        Button home_kategori = (Button) findViewById(R.id.home_kategori);
+        Button pantry_kategori = (Button) findViewById(R.id.pantry_kategori);
+        Button foodped_kategori = (Button) findViewById(R.id.foodped_kategori);
         //Button foodpedia = (Button) findViewById(R.id.foodpediaButton);
 //        Button item1 = (Button) findViewById(R.id.Item1Button);
 //        Button item2 = (Button) findViewById(R.id.Item2Button);
@@ -86,6 +89,24 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
            @Override
             public void onClick(View view) {
                back();
+            }
+        });
+        home_kategori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homeKategori();
+            }
+        });
+        pantry_kategori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pantryKategori();
+            }
+        });
+        foodped_kategori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                foodpedKategori();
             }
         });
 
@@ -118,10 +139,21 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
 //        });
     }
 
-    protected void home(){
-        Intent intent = new Intent(this, StartPage.class);
+    private void foodpedKategori() {
+        Intent intent = new Intent(this, Foodpedia_category.class);
         startActivity(intent);
     }
+
+    private void pantryKategori() {
+        Intent intent = new Intent(this, Pantry.class);
+        startActivity(intent);
+    }
+
+    private void homeKategori() {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
     protected void back(){
         Intent intent = new Intent(this, Foodpedia_category.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

@@ -82,11 +82,11 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
             items_name.add(items.get(i).get(1));
         }
 
-        //Button home = (Button) findViewById(R.id.homeButton);
+        Button home_groc = (Button) findViewById(R.id.home_groc);
         Button back_button = (Button) findViewById(R.id.backButton);
         Button add_item = (Button) findViewById(R.id.addItem);
-        //Button pantry = (Button) findViewById(R.id.pantryButton);
-
+        Button pantry_groc = (Button) findViewById(R.id.pantry_groc);
+        Button foodped_groc = (Button) findViewById(R.id.foodped_pantry);
         /*home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +107,24 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
                 addItem();
             }
         });
+        home_groc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homeGroc();
+            }
+        });
+        foodped_groc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                foodpedGroc();
+            }
+        });
+        pantry_groc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pantryGroc();
+            }
+        });
 
         /*pantry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +132,21 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
                 pantry();
             }
         });*/
+    }
+
+    private void pantryGroc() {
+        Intent intent = new Intent(this, Pantry.class);
+        startActivity(intent);
+    }
+
+    private void foodpedGroc() {
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        startActivity(intent);
+    }
+
+    private void homeGroc() {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 
     protected void back(){
