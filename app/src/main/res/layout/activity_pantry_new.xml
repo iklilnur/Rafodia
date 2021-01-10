@@ -7,10 +7,10 @@
     android:background="@drawable/pantry1_">
 
     <Button
-        android:id="@+id/pantry_pantry"
+        android:id="@+id/tambah_pantry"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/pantry_tengah_rounded"
+        android:background="@drawable/tambah"
         android:textColor="@color/background"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@id/horizontal21"
