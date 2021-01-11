@@ -86,7 +86,7 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         Button back_button = (Button) findViewById(R.id.backButton);
         Button add_item = (Button) findViewById(R.id.addItem);
         Button pantry_groc = (Button) findViewById(R.id.pantry_groc);
-        Button foodped_groc = (Button) findViewById(R.id.foodped_pantry);
+        Button foodped_groc = (Button) findViewById(R.id.foodped_groc);
         /*home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

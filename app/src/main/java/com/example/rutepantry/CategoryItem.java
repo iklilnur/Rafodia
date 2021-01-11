@@ -221,11 +221,11 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
             else{
                 resultEmpty = true;
                 //Toast.makeText(this, "Item tidak ditemukan", Toast.LENGTH_SHORT).show();
-//                ArrayList<String> kosong = new ArrayList<>();
-//                kosong.add("");
-//                kosong.add("Bahan tidak ditemukan.");
-//                category_items = new ArrayList<>();
-//                category_items.add(kosong);
+                ArrayList<String> kosong = new ArrayList<>();
+                kosong.add("");
+                kosong.add("Bahan tidak ditemukan.");
+                category_items = new ArrayList<>();
+                category_items.add(kosong);
 
                 RecyclerView recyclerView = findViewById(R.id.categoryItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(CategoryItem.this));
