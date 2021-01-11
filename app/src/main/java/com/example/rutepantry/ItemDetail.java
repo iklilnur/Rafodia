@@ -39,7 +39,7 @@ public class ItemDetail extends AppCompatActivity {
         item_image = findViewById(R.id.itemImage);
 
 
-        String image_name = item.get(1).toLowerCase().replace(" ","tambah")+"_item_detail";
+        String image_name = item.get(1).toLowerCase().replace(" ","_")+"_item_detail";
         int resID = getResources().getIdentifier(image_name, "drawable", "com.example.rutepantry");
 
         item_image.setImageResource(resID);
@@ -126,6 +126,7 @@ public class ItemDetail extends AppCompatActivity {
 
     protected void back(){
         Intent intent = new Intent(this, CategoryItem.class);
+        intent.putExtra("kategori", input_kategori);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         finish();
         startActivityIfNeeded(intent, 0);

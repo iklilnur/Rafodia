@@ -73,18 +73,7 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
         Button home_kategori = (Button) findViewById(R.id.home_kategori);
         Button pantry_kategori = (Button) findViewById(R.id.pantry_kategori);
         Button foodped_kategori = (Button) findViewById(R.id.foodped_kategori);
-        //Button foodpedia = (Button) findViewById(R.id.foodpediaButton);
-//        Button item1 = (Button) findViewById(R.id.Item1Button);
-//        Button item2 = (Button) findViewById(R.id.Item2Button);
-//        Button item3 = (Button) findViewById(R.id.Item3Button);
 
-
-//        home.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                home();
-//            }
-//        });
         back_button.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View view) {
@@ -110,33 +99,6 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
             }
         });
 
-//        foodpedia.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//            public void onClick(View view) {
-//               foodpedia();
-//            }
-//       });
-
-//        item1.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick (View view){
-//        item1();
-//        }
-//        });
-//
-//        item2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick (View view){
-//                item2();
-//            }
-//        });
-//
-//        item3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick (View view){
-//                item3();
-//            }
-//        });
     }
 
     private void foodpedKategori() {
