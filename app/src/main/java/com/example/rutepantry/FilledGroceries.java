@@ -136,24 +136,26 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
 
     private void pantryGroc() {
         Intent intent = new Intent(this, Pantry.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void foodpedGroc() {
         Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void homeGroc() {
         Intent intent = new Intent(this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     protected void back(){
         Intent intent = new Intent(this, Pantry.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        finish();
-        startActivityIfNeeded(intent, 0);
+        startActivity(intent);
     }
 
     protected void home(){
@@ -178,6 +180,18 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         dialogView = inflater.inflate(R.layout.detail_item, null);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
+        dialog.setNegativeButton("TUTUP", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        final AlertDialog alertDialog = dialog.create();
+
+        alertDialog.show();
+
 
         ArrayList<String> item = new ArrayList<>();
         item = mydb.getItemData(Integer.parseInt(groceries_items.get(position).get(3)));
@@ -254,18 +268,10 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
             public void onClick(View view) {
                 mydb.deleteGroceriesItem(Integer.parseInt(groceries_items.get(pos).get(0)));
                 setRecyclerView();
+                alertDialog.dismiss();
             }
         });
 
-        dialog.setNegativeButton("TUTUP", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
     }
 
     private void InputDialog() {
@@ -276,6 +282,7 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
         satuan = dialogView.findViewById(R.id.satuanInput);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
+
 
         Spinner dropdown = dialogView.findViewById(R.id.item);
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
@@ -335,7 +342,9 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
             }
         });
 
-        dialog.show();
+        final AlertDialog alertDialog = dialog.create();
+
+        alertDialog.show();
     }
 
     @Override

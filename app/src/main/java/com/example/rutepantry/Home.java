@@ -42,11 +42,13 @@ public class Home extends AppCompatActivity {
 
     public void foodPedia(){
         Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     public void pantry(){
         Intent intent = new Intent(this, Pantry.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 }

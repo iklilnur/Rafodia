@@ -103,24 +103,26 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
 
     private void foodpedKategori() {
         Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void pantryKategori() {
         Intent intent = new Intent(this, Pantry.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void homeKategori() {
         Intent intent = new Intent(this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     protected void back(){
         Intent intent = new Intent(this, Foodpedia_category.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        finish();
-        startActivityIfNeeded(intent, 0);
+        startActivity(intent);
     }
 
     protected void foodpedia() {
@@ -149,6 +151,7 @@ public class CategoryItem extends AppCompatActivity implements RecyclerAdapter.I
             Intent intent = new Intent(this, ItemDetail.class);
             intent.putExtra("id", category_items.get(position).get(0));
             intent.putExtra("kategori", inputKategori);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
         }
     }
