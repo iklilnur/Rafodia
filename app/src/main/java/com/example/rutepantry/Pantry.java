@@ -52,7 +52,9 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         //memasang onclick listener
         //Button home = (Button) findViewById(R.id.homeButton);
         Button back = (Button) findViewById(R.id.backButton);
-        Button add_pantry = (Button) findViewById(R.id.addPantry);
+        Button add_pantry = (Button) findViewById(R.id.tambah_pantry);
+        Button home_pantry = (Button) findViewById(R.id.home_pantry);
+        Button foodped_pantry = (Button) findViewById(R.id.foodped_pantry);
 
         /*home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +74,28 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
                 addPantry();
             }
         });
+        home_pantry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homePantry();
+            }
+        });
+        foodped_pantry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                foodpedPantry();
+            }
+        });
+    }
+
+    private void foodpedPantry() {
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        startActivity(intent);
+    }
+
+    private void homePantry() {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 
     protected void filledGroceries(){

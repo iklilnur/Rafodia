@@ -5,6 +5,112 @@
     android:layout_height="match_parent"
     android:background="@drawable/kategori_search">
 
+    <Button
+        android:id="@+id/foodped_kategori"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/foopedia_tengah_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal24"
+        app:layout_constraintLeft_toRightOf="@id/vertical30"
+        app:layout_constraintRight_toLeftOf="@id/vertical28"
+        app:layout_constraintTop_toBottomOf="@id/horizontal22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.575" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <Button
+        android:id="@+id/home_kategori"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/home_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal25"
+        app:layout_constraintLeft_toRightOf="@id/vertical29"
+        app:layout_constraintRight_toLeftOf="@id/vertical27"
+        app:layout_constraintTop_toBottomOf="@id/horizontal23" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.207" />
+
+    <Button
+        android:id="@+id/pantry_kategori"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pantry_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal25"
+        app:layout_constraintLeft_toRightOf="@id/vertical26"
+        app:layout_constraintRight_toLeftOf="@id/vertical25"
+        app:layout_constraintTop_toBottomOf="@id/horizontal23" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.907" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_back"
         android:layout_width="wrap_content"

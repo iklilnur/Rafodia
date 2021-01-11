@@ -57,9 +57,10 @@ public class ItemDetail extends AppCompatActivity {
         satuan.setText(item.get(6));
 
 
-        //Button home = (Button) findViewById(R.id.homeButton);
+        Button home_item = (Button) findViewById(R.id.home_item);
+        Button pantry_item = (Button) findViewById(R.id.pantry_item);
         Button back_button = (Button) findViewById(R.id.backButton2);
-        //Button foodpedia = (Button) findViewById(R.id.foodpediaButton);
+        Button foodped_item = (Button) findViewById(R.id.foodped_item);
 
 //        home.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -74,6 +75,24 @@ public class ItemDetail extends AppCompatActivity {
         back();
         }
         });
+        home_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homeItem();
+            }
+        });
+        pantry_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pantryItem();
+            }
+        });
+        foodped_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                foodpedItem();
+            }
+        });
 
 //        foodpedia.setOnClickListener(new View.OnClickListener() {
 //           @Override
@@ -82,6 +101,22 @@ public class ItemDetail extends AppCompatActivity {
 //            }
 //        });
     }
+
+    private void foodpedItem() {
+        Intent intent = new Intent(this, Foodpedia_category.class);
+        startActivity(intent);
+    }
+
+    private void pantryItem() {
+        Intent intent = new Intent(this, Pantry.class);
+        startActivity(intent);
+    }
+
+    private void homeItem() {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
     protected void home() {
         Intent intent = new Intent(this, StartPage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

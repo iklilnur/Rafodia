@@ -6,24 +6,70 @@
     android:background="@drawable/groceries">
 
     <Button
-        android:id="@+id/addPantry2"
+        android:id="@+id/pantry_groc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/tambah"
-        android:text="+"
+        android:background="@drawable/pantry_tengah_rounded"
         android:textColor="@color/background"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@id/horizontal9"
-        app:layout_constraintLeft_toRightOf="@id/vertical7"
-        app:layout_constraintRight_toLeftOf="@id/vertical6"
+        app:layout_constraintLeft_toRightOf="@id/vertical6"
+        app:layout_constraintRight_toLeftOf="@id/vertical7"
         app:layout_constraintTop_toBottomOf="@id/horizontal8" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical1"
+        android:id="@+id/horizontal8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04" />
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.575" />
+
+    <Button
+        android:id="@+id/home_groc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/home_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal19"
+        app:layout_constraintLeft_toRightOf="@id/vertical2"
+        app:layout_constraintRight_toLeftOf="@id/vertical21"
+        app:layout_constraintTop_toBottomOf="@id/horizontal18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical2"
@@ -31,6 +77,47 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.207"
+ />
+
+    <Button
+        android:id="@+id/foodped_groc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/foodpedia_transparan_rounded"
+        android:textColor="@color/background"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal19"
+        app:layout_constraintLeft_toRightOf="@id/vertical19"
+        app:layout_constraintRight_toLeftOf="@id/vertical20"
+        app:layout_constraintTop_toBottomOf="@id/horizontal18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.907" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical3"
@@ -45,20 +132,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.93" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.43" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
@@ -108,20 +181,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.205" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
 
     <ScrollView
         android:layout_width="0dp"

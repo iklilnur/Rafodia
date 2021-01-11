@@ -7,7 +7,7 @@
     android:background="@drawable/foodpedia">
 
     <Button
-        android:id="@+id/addPantry3"
+        android:id="@+id/foodped_foodpedia"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/foopedia_tengah_rounded"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@id/horizontal10" />
 
     <Button
-        android:id="@+id/addPantry4"
+        android:id="@+id/home_foodpedia"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/home_transparan_rounded"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/horizontal12" />
 
     <Button
-        android:id="@+id/addPantry5"
+        android:id="@+id/pantry_foodpedia"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/pantry_transparan_rounded"
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.90" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical8"
@@ -99,8 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.21"
-        app:layout_constraintTop_toTopOf="horizontal13" />
+        app:layout_constraintGuide_percent="0.207" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical11"
@@ -114,8 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.91"
-        app:layout_constraintTop_toTopOf="horizontal13" />
+        app:layout_constraintGuide_percent="0.907" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal1"
