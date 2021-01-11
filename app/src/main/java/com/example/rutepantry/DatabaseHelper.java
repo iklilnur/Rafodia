@@ -350,10 +350,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         ArrayList<ArrayList<String>> array_list = new ArrayList<>();
         //hp = new HashMap();
         SQLiteDatabase db = this.getWritableDatabase();
-
         Cursor res;
         try{
-            res = db.rawQuery( "SELECT * FROM item WHERE nama_item LIKE '%"+name+"%' AND WHERE kategori_item LIKE '%"+kategori+"%' ORDER BY nama_item ASC", null );
+            Log.d("input search", "itemname = "+name+", kategori = "+kategori);
+            res = db.rawQuery( "SELECT * FROM item WHERE "+ITEMS_COLUMN_NAME+" LIKE '%"+name+"%' AND "+ITEMS_COLUMN_CATEGORY+" LIKE '%"+kategori+"%' ORDER BY "+ITEMS_COLUMN_NAME+" ASC", null );
             Log.d("alldata", "Success");
             if(res.getCount() == 0){
                 return null;
