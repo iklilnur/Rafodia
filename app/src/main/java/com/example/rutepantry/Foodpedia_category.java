@@ -131,16 +131,19 @@ public class Foodpedia_category extends AppCompatActivity {
 
     private void foodpedFoodpedia() {
         Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void pantryFoodpedia() {
         Intent intent = new Intent(this, Pantry.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void homeFoodpedia() {
         Intent intent = new Intent(this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

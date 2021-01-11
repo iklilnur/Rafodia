@@ -88,6 +88,12 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
         });
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        setRecyclerView();
+    }
+
     private void foodpedPantry() {
         Intent intent = new Intent(this, Foodpedia_category.class);
         startActivity(intent);
@@ -117,8 +123,7 @@ public class Pantry extends AppCompatActivity implements RecyclerAdapter.ItemCli
     protected void back(){
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        finish();
-        startActivityIfNeeded(intent, 0);
+        startActivity(intent);
     }
 
     private void DateDialog() {

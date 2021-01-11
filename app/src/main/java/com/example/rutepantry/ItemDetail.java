@@ -104,16 +104,19 @@ public class ItemDetail extends AppCompatActivity {
 
     private void foodpedItem() {
         Intent intent = new Intent(this, Foodpedia_category.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void pantryItem() {
         Intent intent = new Intent(this, Pantry.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
     private void homeItem() {
         Intent intent = new Intent(this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
@@ -128,8 +131,7 @@ public class ItemDetail extends AppCompatActivity {
         Intent intent = new Intent(this, CategoryItem.class);
         intent.putExtra("kategori", input_kategori);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        finish();
-        startActivityIfNeeded(intent, 0);
+        startActivity(intent);
     }
 
     protected void foodpedia() {
