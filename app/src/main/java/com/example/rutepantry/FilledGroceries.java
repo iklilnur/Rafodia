@@ -193,6 +193,34 @@ public class FilledGroceries extends AppCompatActivity implements RecyclerAdapte
 
         kadaluarsa = dialogView.findViewById(R.id.waktuKadaluarsa2);
 
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String stringDate = groceries.get(1);
+        Date curDate = Calendar.getInstance().getTime();
+        Date gDate = Calendar.getInstance().getTime();
+        try {
+            gDate = format.parse(stringDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long diff = gDate.getTime() - curDate.getTime();
+        int intDiff = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+        int itemExpire = Integer.parseInt(item.get(5));
+        int expire = itemExpire + intDiff;
+        String sExpire = "";
+
+        if(expire < 0){
+            sExpire = "Kadaluarsa "+(expire*-1)+" hari yang lalu.";
+        }
+        else if(expire == 0){
+            sExpire = "Kadaluarsa pada hari ini.";
+        }
+        else {
+            sExpire = "Kadaluarsa dalam "+expire+" hari.";
+        }
+        kadaluarsa.setText(sExpire);
+
         jumlah = dialogView.findViewById(R.id.jumlah2);
         jumlah.setEnabled(false);
         //jumlah.setInputType(InputType.TYPE_NULL);
